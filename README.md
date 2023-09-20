@@ -1,5 +1,7 @@
 # Black-Jack
 
+![computer](https://github.com/mjidelouss/Black-Jack/blob/main/21.png)
+
 User Stories
 
 🎮 Start a Game
