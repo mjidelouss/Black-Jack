@@ -17,6 +17,16 @@ public class Main {
         for (int i = 0; i < deck.length; i++) {
             System.out.print("(" + deck[i][0] + " " + deck[i][1] + ")");
         }
+        int[][] drawnCards = draw_n_cards(deck, 5).get(0);
+        int[][] remainingCards = draw_n_cards(deck, 5).get(1);
+        System.out.print("\n\n");
+        for (int i = 0; i < drawnCards.length; i++) {
+            System.out.print("(" + drawnCards[i][0] + " " + drawnCards[i][1] + ")");
+        }
+        System.out.print("\n");
+        for (int i = 0; i < remainingCards.length; i++) {
+            System.out.print("(" + remainingCards[i][0] + " " + remainingCards[i][1] + ")");
+        }
     }
 
     public static int[][] creatDeckCards() {
@@ -66,6 +76,33 @@ public class Main {
         return result;
     }
 
+    public static List<int[][]> draw_n_cards(int[][] deck, int n) {
+        List<int[][]> result = new ArrayList<>();
+        int size = deck.length;
+
+        if (n >= size) {
+            result.add(deck);
+            result.add(new int[0][2]);
+        } else {
+            int[][] drawnCards = new int[n][2];
+            int[][] remainingCards = new int[size - n][2];
+
+            for (int i = 0; i < n; i++) {
+                drawnCards[i][0] = deck[i][0];
+                drawnCards[i][1] = deck[i][1];
+            }
+
+            for (int i = n; i < size; i++) {
+                remainingCards[i - n][0] = deck[i][0];
+                remainingCards[i - n][1] = deck[i][1];
+            }
+            result.add(drawnCards);
+            result.add(remainingCards);
+        }
+
+        return result;
+    }
+
     public static List<int [][]> drawCard(int [][] deck) {
         int n = new Random().nextInt(deck.length);
         List<int [][]> resList = extractIndexCard(deck, n);
@@ -88,7 +125,6 @@ public class Main {
         }
         return shuffledDeck;
     }
-
     public static void art() {
         System.out.print("\n\n");
         System.out.println("⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n" +
