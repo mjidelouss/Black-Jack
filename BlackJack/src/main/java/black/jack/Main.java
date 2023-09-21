@@ -1,7 +1,6 @@
 package black.jack;
 import black.jack.Enums.Colors;
 import java.util.*;
-import java.util.function.Supplier;
 import java.util.List;
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -10,22 +9,13 @@ import java.io.IOException;
 public class Main {
     public static void main(String[] args) throws InterruptedException {
         int [][] deck = creatDeckCards();
-        int [][] newDeck = constructDeckFromCard(8,3);
         for (int i = 0; i < deck.length; i++) {
             System.out.print("(" + deck[i][0] + " " + deck[i][1] + ")");
         }
         System.out.print("\n\n");
-        for (int i = 0; i < newDeck.length; i++) {
-            System.out.print("(" + newDeck[i][0] + " " + newDeck[i][1] + ")");
-        }
-        System.out.print("\n\n");
-        List<int [][]> extractedDeck = extractIndexCard(newDeck, 3);
-        int[][] extractedCard = extractedDeck.get(0);
-        int[][] remainingDeck = extractedDeck.get(1);
-        System.out.println("Extracted Card: (" + extractedCard[0][0] + " " + extractedCard[0][1] + ")");
-        System.out.println("Remaining Deck:");
-        for (int[] card : remainingDeck) {
-            System.out.println("(" + card[0] + " " + card[1] + ")");
+        deck = shuffleDeck(deck);
+        for (int i = 0; i < deck.length; i++) {
+            System.out.print("(" + deck[i][0] + " " + deck[i][1] + ")");
         }
     }
 
@@ -76,8 +66,27 @@ public class Main {
         return result;
     }
 
-    public static void drawCard() {
+    public static List<int [][]> drawCard(int [][] deck) {
+        int n = new Random().nextInt(deck.length);
+        List<int [][]> resList = extractIndexCard(deck, n);
+        return resList;
+    }
 
+    public static int[][] shuffleDeck(int [][] deck) {
+        int [][] shuffledDeck = new int [deck.length][2];
+        List<int [][]> cardList = drawCard(deck);
+        int [][] newDeck = cardList.get(1);
+        int count = 0;
+        while (!cardList.isEmpty()) {
+            shuffledDeck[count] = cardList.get(0)[0];
+            if (newDeck.length == 0) {
+                break;
+            }
+            cardList = drawCard(newDeck);
+            newDeck = cardList.get(1);
+            count++;
+        }
+        return shuffledDeck;
     }
 
     public static void art() {
