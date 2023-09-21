@@ -10,13 +10,22 @@ import java.io.IOException;
 public class Main {
     public static void main(String[] args) throws InterruptedException {
         int [][] deck = creatDeckCards();
-        int [][] newDeck = constructDeckFromCard(8,4);
+        int [][] newDeck = constructDeckFromCard(8,3);
         for (int i = 0; i < deck.length; i++) {
             System.out.print("(" + deck[i][0] + " " + deck[i][1] + ")");
         }
         System.out.print("\n\n");
         for (int i = 0; i < newDeck.length; i++) {
             System.out.print("(" + newDeck[i][0] + " " + newDeck[i][1] + ")");
+        }
+        System.out.print("\n\n");
+        List<int [][]> extractedDeck = extractIndexCard(newDeck, 3);
+        int[][] extractedCard = extractedDeck.get(0);
+        int[][] remainingDeck = extractedDeck.get(1);
+        System.out.println("Extracted Card: (" + extractedCard[0][0] + " " + extractedCard[0][1] + ")");
+        System.out.println("Remaining Deck:");
+        for (int[] card : remainingDeck) {
+            System.out.println("(" + card[0] + " " + card[1] + ")");
         }
     }
 
@@ -38,13 +47,37 @@ public class Main {
         int [][] newDeck = new int [size][2];
         int index = 0;
         for (int i = suit; i <= 4 ; i++) {
-            for (int j = cardNumber; j <= 13; j++) {
+            for (int j = (suit == i) ? cardNumber : 1; j <= 13; j++) {
                 newDeck[index][0] = j;
                 newDeck[index][1] = i;
                 index++;
             }
         }
         return newDeck;
+    }
+
+    public static List<int [][]> extractIndexCard(int [][] deck, int index) {
+        int size = deck.length - 1;
+        int[][] extractedCard = new int[1][2];
+        int[][] remainingDeck = new int[size][2];
+        int count = 0;
+        extractedCard[0][0] = deck[index][0];
+        extractedCard[0][1] = deck[index][1];
+        for (int i = 0; i < deck.length; i++) {
+            if (i != index) {
+                remainingDeck[count][0] = deck[i][0];
+                remainingDeck[count][1] = deck[i][1];
+                count++;
+            }
+        }
+        List<int[][]> result = new ArrayList<>();
+        result.add(extractedCard);
+        result.add(remainingDeck);
+        return result;
+    }
+
+    public static void drawCard() {
+
     }
 
     public static void art() {
