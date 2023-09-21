@@ -1,0 +1,18 @@
+🅱🅻🅰🅲🅺 🅹🅰🅲🅺
+public static void art() throws InterruptedException {
+        String fileName = "/home/mj/Black-Jack/BlackJack/src/main/java/black/jack/blackjack.txt";
+
+        try (BufferedReader br = new BufferedReader(new FileReader(fileName))) {
+            String line;
+            while ((line = br.readLine()) != null) {
+                System.out.println(line);
+                try {
+                    Thread.sleep(200);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
