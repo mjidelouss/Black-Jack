@@ -7,9 +7,11 @@ public class Main {
     public static void main(String[] args) throws InterruptedException {
         art();
         gameMenu();
+        winMessage();
+        loseMessage();
     }
 
-    public static void startGame () {
+    public static void startGame () throws InterruptedException {
         Scanner scanner = new Scanner(System.in);
         while (true) {
             gameMenu();
@@ -180,7 +182,7 @@ public class Main {
         System.out.println('\t'+ Colors.RESET.getColor() +"\t                                            ◼️                                                                                  ◼️");
         System.out.println('\t'+ Colors.RESET.getColor() +"\t                                            ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️");
     }
-    public static playerOptions() {
+    public static void playerOptions() {
         System.out.print("\n\n\n");
         System.out.println('\t'+ Colors.RESET.getColor() +"\t                                            ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️");
         System.out.println('\t'+ Colors.RESET.getColor() +"\t                                            ◼️                                                                                  ◼️");
@@ -195,7 +197,7 @@ public class Main {
         System.out.println('\t'+ Colors.RESET.getColor() +"\t                                            ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️");
     }
 
-    public static gameRules() {
+    public static void gameRules() {
         System.out.print("\n\n\n");
         System.out.println('\t'+ Colors.RESET.getColor() +"\t                                            ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️");
         System.out.println('\t'+ Colors.RESET.getColor() +"\t                                            ◼️                                                                                                       ◼️");
@@ -237,6 +239,104 @@ public class Main {
             Thread.sleep(220); // Sleep for 500 milliseconds between lines
         }
         System.exit(0);
+    }
+
+    public static void winMessage() throws InterruptedException {
+        System.out.print("\n\n");
+        String lines[] = {
+                        '\t'+ Colors.YELLOW.getColor() +"⠀⠀⠀⠀⠀⠀⠀⠀⢀⣴⣿⣿⣿⣿⣿⣿⣿⣷⡀⣀⣤⣤⣤⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n"+
+                        '\t'+ Colors.YELLOW.getColor() +"⠀⠀⠀⠀⠀⠀⠀⠀⣼⣿⣿⣿⡟⢿⣻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⣄⢀⣀⣤⣴⣦⣤⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n"+
+                        '\t'+ Colors.YELLOW.getColor() +"⠀⠀⠀⠀⠀⠀⠀⣰⣿⣿⣿⡟⣜⣣⠞⣿⣿⣿⡿⣟⡟⣻⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣦⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n"+
+                        '\t'+ Colors.YELLOW.getColor() +"⠀⠀⠀⠀⠀⠀⢀⣿⣿⣿⣿⣙⢦⣇⠻⡴⣛⣿⡵⢎⡼⣱⡚⣼⢻⣿⣿⡟⡽⣛⠿⣿⣿⣿⣷⣤⣤⣄⣀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n"+
+                        '\t'+ Colors.YELLOW.getColor() +"⠀⠀⠀⠀⠀⠀⣼⣿⣿⣿⡳⣜⢺⡬⢏⡵⢣⡝⣹⢎⡵⢣⡝⢦⡛⡼⣻⣿⡵⣩⢞⡹⢿⣿⣿⣿⣿⣿⣿⣿⣆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n"+
+                        '\t'+ Colors.YELLOW.getColor() +"⠀⠀⠀⠀⠀⠀⠀⠹⣿⣿⣿⣿⡜⣣⢳⢎⡳⣬⢓⡳⢎⡻⣜⡲⡹⡥⢏⡞⣥⠻⣔⡛⢦⡻⣌⢏⡞⡼⣿⣿⣿⣧⣀⣀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n"+
+                        '\t'+ Colors.YELLOW.getColor() +"⠀⠀⠀⠀⠀⠀⠀⠀⠙⣿⣿⣿⣿⣥⣋⢮⠵⣊⢧⡛⡼⡱⢎⡵⢳⢭⡓⡞⣥⢻⡜⣹⢣⠗⣮⢹⡜⣱⢿⣿⣿⣿⣿⣿⣿⣷⣦⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n"+
+                        '\t'+ Colors.YELLOW.getColor() +"⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⢿⣿⣿⣷⣎⢧⢫⡝⢶⣹⡱⢏⡽⢪⣝⡲⢽⡱⣋⢶⡩⢇⣏⠾⣡⣛⢼⣣⢞⡻⢿⡻⣟⢿⣿⣿⣿⣷⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n"+
+                        '\t'+ Colors.YELLOW.getColor() +"⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⢿⣿⣿⣿⣮⡓⢮⣓⢦⠽⣩⢞⣣⠮⡕⣧⢳⣭⣶⣿⣿⣾⣧⣷⣬⠳⡭⢎⡵⣋⠶⣍⠮⣽⣿⣿⣿⡷⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n"+
+                        '\t'+ Colors.YELLOW.getColor() +"⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⢻⣿⣿⣿⣯⣷⣾⣮⣳⣧⣞⣦⣿⣽⣾⠿⠛⠋⠉⠀⠀⠉⠙⣿⣟⡼⣩⠞⣭⢓⡮⣽⣾⣿⣿⣿⣃⣀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n"+
+                        '\t'+ Colors.YELLOW.getColor() +"⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢹⣿⣿⣿⣿⣿⣿⣿⡿⠿⠟⠛⠃⠀⠀⠀⠀⣀⣀⣤⣤⡀⠈⣿⣧⢇⢾⡠⣞⣿⣿⣿⣿⣿⣿⣿⣿⣿⣧⡀⠀⠀⠀⠀⠀⠀⠀⠀\n"+
+                        '\t'+ Colors.YELLOW.getColor() +"⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⣹⣿⣿⣿⡿⠋⠁⠀⠀⠀⠀⠀⠀⠀⠀⢿⣿⣿⣿⣿⣾⣽⡿⢿⣾⣿⣿⠿⠿⠿⠿⠿⠿⠿⢿⣿⣿⣿⣶⡀⠀⠀⠀⠀⠀⠀\n"+
+                        '\t'+ Colors.YELLOW.getColor() +"⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣼⣿⣿⣿⠋⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢹⣿⣿⣿⣿⣿⡟⠁⢠⣿⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⣿⣿⣿⣿⡄⠀⠀⠀⠀⠀\n"+
+                        '\t'+ Colors.YELLOW.getColor() +"⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣾⣿⣿⡿⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠙⢿⠿⠋⠀⢀⣿⠃⠀⠀⠀⠁⠀⢀⣠⣤⣶⣶⣿⣿⣿⣿⣿⠇⠀⠀⠀⠀⠀\n"+
+                        '\t'+ Colors.YELLOW.getColor() +"⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣾⣿⣿⡟⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⣿⣆⠀⠀⣀⣴⣾⠿⠋⣡⣾⣿⣿⣿⡿⠟⠁⠀⠀⠀⠀⠀⠀\n"+
+                        '\t'+ Colors.YELLOW.getColor() +"⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⣾⣿⣿⡿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⣿⣶⣿⣿⣏⣀⣴⣿⣿⣿⣿⠟⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀\n"+
+                        '\t'+ Colors.YELLOW.getColor() +"⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣾⣿⣿⡟⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣴⡿⣏⢧⢫⢟⡻⢏⡽⣿⣿⣿⣧⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n"+
+                        '\t'+ Colors.YELLOW.getColor() +"⠀⠀⠀⠀⠀⠀⠀⠀⢀⣾⣿⣿⡟⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣰⣿⢏⡗⣺⢬⡓⣮⠳⣭⢲⢻⣿⣿⣿⣧⠀⠀⠀⠀⠀⠀⠀⠀⠀\n"+
+                        '\t'+ Colors.YELLOW.getColor() +"⠀⠀⠀⠀⠀⠀⠀⢠⣿⣿⣿⡟⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⡟⡮⡼⡱⣎⠵⣎⢽⠲⣍⢯⣿⣿⣿⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀\n"+
+                        '\t'+ Colors.YELLOW.getColor() +"⠀⠀⠀⠀⠀⠀⢠⣿⣿⣿⡟⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⣿⡟⣜⡳⢵⢪⠽⣘⠮⣝⡜⣾⣿⣿⣿⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀\n"+
+                        '\t'+ Colors.YELLOW.getColor() +"⠀⠀⠀⠀⠀⢠⣿⣿⣿⡟⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣿⢵⣊⣿⢥⡫⡝⣥⣛⣾⣿⣿⣿⣿⣿⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀\n"+
+                        '\t'+ Colors.YELLOW.getColor() +"⠀⠀⠀⠀⢠⣿⣿⣿⠟⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣼⣟⢦⣋⡟⡶⣱⢋⡶⣹⣿⣿⣿⣿⠿⠋⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n"+
+                        '\t'+ Colors.YELLOW.getColor() +"⠀⠀⠀⢠⣿⣿⣿⠏⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⢿⣷⣭⡚⡵⢣⢏⡖⣿⣿⣿⣿⣇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n"+
+                        '\t'+ Colors.YELLOW.getColor() +"⠀⠀⠀⣾⣿⣿⡟⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠹⣷⣿⡼⣭⣾⣾⡿⢻⣿⣿⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n"+
+                        '\t'+ Colors.YELLOW.getColor() +"⠀⠀⢰⣿⣿⣿⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠛⠿⠛⠉⠁⠀⢸⣿⣿⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n"+
+                        '\t'+ Colors.YELLOW.getColor() +"⠀⣰⣿⣿⣿⠀⢀⣴⣿⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⣿⣿⣿⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n"+
+                        '\t'+ Colors.YELLOW.getColor() +"⢰⣿⣿⣿⣿⣶⣿⣿⣿⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⣿⣿⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n"+
+                        '\t'+ Colors.YELLOW.getColor() +"⠈⠈⢻⣿⣿⣿⣿⣿⣿⡇⠀⠀⠀⢀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢻⣿⣿⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n"+
+                        '\t'+ Colors.YELLOW.getColor() +"⠀⠀⠀⠀⠈⠀⢸⣿⣿⣿⠀⠀⣠⣾⣷⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣿⣿⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n"+
+                        '\t'+ Colors.YELLOW.getColor() +"⠀⠀⠀⣠⣦⠀⠈⣿⣿⣿⣠⣾⣿⣿⣿⣿⣦⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣿⣿⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n"+
+                        '\t'+ Colors.YELLOW.getColor() +"⠀⠀⠀⣿⣿⡇⠀⢿⣿⣿⣿⣿⡿⠛⢿⣿⣿⣷⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣾⣿⣿⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n"+
+                        '\t'+ Colors.YELLOW.getColor() +"⠀⠀⠀⢸⣿⣷⠀⠀⠉⠙⠋⠉⠀⠀⠈⠻⣿⣿⣿⣦⣀⠀⠀⠀⠀⠀⠀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⣿⣿⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n"+
+                        '\t'+ Colors.YELLOW.getColor() +"⠀⠀⠀⢸⣿⣿⡆⠀⠀⠀⠀⠀⠀⠀⢀⠀⠈⠟⠛⠛⠉⣰⣇⠀⠀⠀⣾⣿⡀⠀⢠⣦⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡈⠛⠛⠛⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n"+
+                        '\t'+ Colors.YELLOW.getColor() +"⠀⠀⠀⠀⣿⣿⣷⠀⠀⠀⠀⠀⠀⢀⣿⣿⠀⢰⣶⡄⠀⣿⣿⣆⠀⠀⢽⣿⡇⠀⣿⣿⣿⡀⠀⣸⣿⡄⠀⢀⣴⣶⣶⣶⣶⣷⣄⣠⣾⣷⣶⣶⣦⣤⡀⠀⠀⠀⠀⠀⠀\n"+
+                        '\t'+ Colors.YELLOW.getColor() +"⠀⠀⠀⠀⢿⣿⣿⠀⠀⣼⣄⠀⠀⢸⣿⡇⠀⢸⣿⡇⠀⣿⣿⣿⣆⠀⢸⣿⡇⠀⣿⣿⣿⣧⠀⢹⣿⡇⠀⠘⣿⣿⠋⠛⠛⠛⠉⢸⣿⡟⠛⠛⠻⣿⣿⣦⠀⠀⠀⠀⠀\n"+
+                        '\t'+ Colors.YELLOW.getColor() +"⠀⠀⠀⠀⢸⣿⣿⡆⢸⣿⣿⡄⠀⢾⣿⡇⠀⢸⣿⡇⠀⣿⣿⣿⣿⡆⠘⣿⣿⠀⣿⣿⣿⣿⣇⠘⣿⣷⠀⠀⣿⣿⣀⢀⣀⠀⠐⢺⣿⡇⠀⠀⠀⣹⣿⣿⠀⠀⠀⠀⠀\n"+
+                        '\t'+ Colors.YELLOW.getColor() +"⠀⠀⠀⠀⠀⣿⣿⣧⣿⣿⣿⣿⡀⣿⣿⠀⠀⢸⣿⡇⠀⣿⣿⠈⢿⣿⣄⣿⣿⡀⢿⣿⡇⢿⣿⣾⣿⣿⠀⠀⣿⣿⣿⣿⣿⡿⠆⢸⣿⣿⣀⣤⣾⣿⡿⠃⠀⠀⠀⠀⠀\n"+
+                        '\t'+ Colors.YELLOW.getColor() +"⠀⠀⠀⠀⠀⢸⣿⣿⣿⣿⢹⣿⣷⣿⣿⠀⠀⢸⣿⡇⠀⣿⣿⠀⠈⣿⣿⣿⣿⡇⢻⣿⡇⠈⣿⣿⣿⣿⠀⠀⢻⣿⡄⠀⠀⠀⠀⢈⣿⣿⣿⣿⣿⣿⣧⡄⠀⠀⠀⠀⠀\n"+
+                        '\t'+ Colors.YELLOW.getColor() +"⠀⠀⠀⠀⠀⠸⣿⣿⣿⡇⠀⢿⣿⣿⣿⠀⠀⢸⣿⡇⠀⣿⣿⠀⠀⠹⣿⣿⣿⣇⣿⣿⡇⠀⠸⣿⣿⣿⡀⠀⣻⣿⡇⠀⠀⠀⠀⠠⣿⣟⠉⠉⠉⢿⣿⡇⠀⠀⠀⠀⠀\n"+
+                        '\t'+ Colors.YELLOW.getColor() +"⠀⠀⠀⠀⠀⠀⣿⣿⣿⠃⠀⠘⣿⣿⡏⠀⠀⢸⣿⡧⠆⣿⣿⠀⠀⠀⠹⣿⣿⣿⣿⣿⣿⠀⠀⠹⣿⣿⣧⠀⢽⣿⣷⣶⣶⣶⣦⣴⣿⣿⠀⠀⠀⢸⣿⣧⠀⠀⠀⠀⠀\n"+
+                        '\t'+ Colors.YELLOW.getColor() +"⠀⠀⠀⠀⠀⠀⢿⣿⣟⣀⡄⠀⠈⠙⠁⠀⠀⠈⠿⠛⠘⠿⠟⠀⠀⠀⠀⠻⣿⣿⠛⠛⠃⠀⠀⠀⠻⠿⠟⠀⠈⠻⠋⠛⠋⠉⠁⠀⠿⠟⠀⠀⠀⢸⣿⣿⠄⠀⠀⠀⠀\n"+
+                        '\t'+ Colors.YELLOW.getColor() +"⠀⠀⠀⠀⠀⠀⠀⠀⢸⣿⣿⠃⠀⠀⠀⠀⠀⠀⠀⣠⡀⠀⣠⣴⣄⣀⣶⣄⠈⠁⠀⣀⣀⠀⠀⢀⣠⡀⠀⠀⢀⣾⣶⠀⠀⢀⣈⣀⣠⣄⣤⡀⣠⣤⣽⣋⣠⣤⠀⠀⠀\n"+
+                        '\t'+ Colors.YELLOW.getColor() +"⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⣿⡄⠀⣠⣤⠀⠀⠀⢸⣿⡏⠀⢹⣿⡏⢹⣿⣿⣆⠀⠈⣿⣿⡇⠀⢸⣿⣿⡀⠀⢈⣿⣿⠀⠀⣿⣿⡿⢿⣿⢿⠟⣿⣿⠿⢿⣿⣿⣷⡀⠀\n"+
+                        '\t'+ Colors.YELLOW.getColor() +"⠀⠀⠀⠀⠀⠀⠀⠀⠀⢻⣿⡆⢠⣿⣿⣧⠀⠀⢾⣿⡇⠀⢸⣿⡇⢸⣿⣿⣿⡄⠀⢻⣿⡅⠀⢸⣿⣿⣷⡀⠀⣿⣿⠀⠀⣿⣿⡆⠀⠀⠀⢠⣿⣿⠀⠀⠀⣿⣿⣇⠀\n"+
+                        '\t'+ Colors.YELLOW.getColor() +"⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣿⣇⣸⣿⣿⣿⣆⠀⣿⣿⡇⠀⢸⣿⡇⢸⣿⡟⣿⣿⡀⢸⣿⡇⠀⢸⣿⣿⣿⣷⠀⣿⣿⡀⠀⣿⣿⣿⣿⣿⣶⡀⣿⣿⡄⠀⢀⣿⣿⡟⠀\n"+
+                        '\t'+ Colors.YELLOW.getColor() +"⠀⠀⠀⠀⠀⠀⠀⠀⠀⠸⣿⣿⣿⣿⠉⣿⣿⡄⣿⣿⠀⠀⢸⣿⡇⢸⣿⡇⠘⣿⣷⣿⣿⣇⠀⢼⣿⡇⠹⣿⣷⣿⣿⡇⠀⣻⣿⡇⠉⠉⠁⠀⢿⣿⣿⣿⣿⣿⡏⠀⠀\n"+
+                        '\t'+ Colors.YELLOW.getColor() +"⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⣿⣿⡏⠀⠸⣿⣿⣿⣿⠀⠀⢾⣿⡇⢸⣿⡇⠀⠸⣿⣿⣿⣯⠀⢾⣿⡇⠀⠹⣿⣿⣿⡇⠀⢸⣿⡇⠀⠀⠀⠀⣻⣿⡏⠉⠹⣿⣿⣦⠀\n"+
+                        '\t'+ Colors.YELLOW.getColor() +"⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣻⣿⣿⠃⠀⠀⢹⣿⣿⣿⠀⠀⢾⣿⡇⢸⣿⣇⠀⠀⠹⣿⣿⣿⠀⣽⣿⡇⠀⠀⢻⣿⣿⣧⠀⢸⣿⣷⣴⣶⣶⠄⣹⣿⣇⠀⠀⠘⣿⣿⡆\n"+
+                        '\t'+ Colors.YELLOW.getColor() +"⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠻⣿⠟⠀⠀⠀⠀⢿⣿⡷⠀⠀⣿⣿⡇⢸⣿⣿⠀⠀⠀⠹⣿⣿⡄⢿⣿⠇⠀⠀⠀⢻⣿⡿⠀⠀⠻⠟⠛⠋⠉⠀⢼⣿⡿⠀⠀⠀⢸⣿⣷\n"+
+                        '\t'+ Colors.YELLOW.getColor() +"⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠁⠀⠀⢿⣿⡇⠈⠛⠉⠀⠀⠀⠀⠙⠋⠀⠀⠀⠀⠀⠀⠀⠀⠈⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠀⠀⠀⠀⢸⣿⡧\n"
+        };
+        for (String line : lines) {
+            System.out.println(line);
+            Thread.sleep(300);
+        }
+    }
+
+    public static void gameRestart() {
+
+    }
+    public static void loseMessage() throws InterruptedException {
+        System.out.print("\n\n");
+        String lines[] = {
+                        '\t'+"\t\t  "+ Colors.CYAN.getColor() +"                              ████████╗ ██████╗ ██╗   ██╗ ██████╗ ██╗  ██╗    ██╗     ██╗   ██╗ ██████╗██╗  ██╗██╗\n" +
+                        '\t'+"\t\t    "+ Colors.CYAN.getColor() +"                            ╚══██╔══╝██╔═══██╗██║   ██║██╔════╝ ██║  ██║    ██║     ██║   ██║██╔════╝██║ ██╔╝██║\n" +
+                        '\t'+"\t\t      "+ Colors.CYAN.getColor() +"                             ██║   ██║   ██║██║   ██║██║  ███╗███████║    ██║     ██║   ██║██║     █████╔╝ ██║\n" +
+                        '\t'+"\t\t     "+ Colors.CYAN.getColor() +"                              ██║   ██║   ██║██║   ██║██║   ██║██╔══██║    ██║     ██║   ██║██║     ██╔═██╗ ╚═╝\n" +
+                        '\t'+"\t\t       "+ Colors.CYAN.getColor() +"                            ██║   ╚██████╔╝╚██████╔╝╚██████╔╝██║  ██║    ███████╗╚██████╔╝╚██████╗██║  ██╗██╗\n" +
+                        '\t'+"\t\t        "+ Colors.CYAN.getColor() +"                           ╚═╝    ╚═════╝  ╚═════╝  ╚═════╝ ╚═╝  ╚═╝    ╚══════╝ ╚═════╝  ╚═════╝╚═╝  ╚═╝╚═╝\n" +
+                        '\t'+"\t\t        "+ Colors.PURPLE.getColor() +"                                             ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⡶⠛⠛⢦⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀ ⠀⠀⠀⠀⠀⠀\n" +
+                        '\t'+"\t\t        "+ Colors.PURPLE.getColor() +"                        ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀                    ⠀⢀⣴⠋⠀⠀⠀⠈⣧⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n" +
+                        '\t'+"\t\t         "+ Colors.PURPLE.getColor() +"                        ⠀⠀⠀                   ⠀⠀⢀⣠⠴⠞⠛⠉⠉⠉⠉⠉⠉⠛⠒⠾⢤⣀⠀⣀⣠⣤⣄⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n"+
+                       '\t'+"\t\t        "+ Colors.PURPLE.getColor() +"                                             ⠀⠀⠀⣠⡶⠋⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠛⢭⡀⠀⠈⣷⠀⠀⠀\n" +
+                       '\t'+"\t\t        "+ Colors.PURPLE.getColor() +"                                   ⠀⠀         ⡴⠋⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⢦⢀⡟⠀⠀⠀\n" +
+                       '\t'+"\t\t        "+ Colors.PURPLE.getColor() +"                                           ⠀⣾⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⢻⡅⠀⠀⠀\n" +
+                       '\t'+"\t\t        "+ Colors.PURPLE.getColor() +"                                           ⢸⠇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢻⣄⣀⠀\n" +
+                       '\t'+"\t\t        "+ Colors.PURPLE.getColor() +"                                           ⣾⠀⠀⣠⣤⣤⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣤⣤⣄⠀⠀⠀⠀⠀⠀⠸⡇⠉⣷\n" +
+                       '\t'+"\t\t        "+ Colors.PURPLE.getColor() +"                                           ⣿⠀⠰⣿⣿⣿⡗⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣿⣿⣿⠀⠀⠀⠀⠀⠀⠀⣧⡴⠋\n" +
+                       '\t'+"\t\t        "+ Colors.PURPLE.getColor() +"                                           ⣿⠀⠀⢸⠛⢫⠀⠀⢠⠴⠒⠲⡄⠀⠀⠀⠀⡝⠛⢡⠀⠀⠀⠀⠀⠀⢰⡏⠀⠀\n" +
+                       '\t'+"\t\t        "+ Colors.PURPLE.getColor() +"                                           ⢸⡄⠀⢸⡀⢸⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡇⠀⢸⠀⠀⠀⠀⠀⠀⡼⣄⠀⠀\n" +
+                       '\t'+"\t\t        "+ Colors.PURPLE.getColor() +"                                    ⠀       ⢳⡄⠀⡇⢸⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢹⠀⢸⠀⠀⠀⠀⢀⡼⠁⢸⡇⠀\n" +
+                       '\t'+"\t\t        "+ Colors.PURPLE.getColor() +"                           ⠀⠀                ⠙⢦⣷⡈⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⠀⠈⡇⠀⣀⡴⠟⠒⠚⠋⠀⠀\n" +
+                       '\t'+"\t\t        "+ Colors.PURPLE.getColor() +"                           ⠀⠀⠀⠀               ⠈⠛⠾⢤⣤⣀⣀⡀⠀⠀⠀⠀⣀⣈⣇⡤⣷⠚⠉⠀⠀⠀⠀⠀⠀⠀\n" +
+                       '\t'+"\t\t        "+ Colors.PURPLE.getColor() +"                           ⠀⠀⠀⠀⠀⠀         ⠀      ⣰⠇⠀⠩⣉⠉⠉⠉⣩⠍⠁⠀⢷⣟⠀⠀⠀⠀⠀⠀⠀⠀⠀\n" +
+                       '\t'+"\t\t        "+ Colors.PURPLE.getColor() +"                           ⠀⠀⠀⠀⠀⠀         ⠀      ⡟⠐⠦⠤⠼⠂⠀⠸⠥⠤⠔⠂⠘⣿⣇⠀⠀⠀⠀⠀⠀⠀⠀\n" +
+                       '\t'+"\t\t        "+ Colors.PURPLE.getColor() +"                           ⠀⠀⠀          ⠀⠀⠀      ⣸⣧⡟⠳⠒⡄⠀⠀⠀⡔⠲⠚⣧⣀⣿⠿⠷⣶⡆⠀⠀⠀⠀⠀\n" +
+                       '\t'+"\t\t        "+ Colors.PURPLE.getColor() +"                           ⠀⠀⠀⠀⠀                ⠀⠻⣄⢀⠀⠀⡗⠀⠀⠀⡇⠄⢠⠀⣼⠟⠀⢀⣨⠇⠀⠀⠀⠀⠀\n" +
+                       '\t'+"\t\t        "+ Colors.PURPLE.getColor() +"                           ⠀⠀⠀⠀⠀⠀⠀                ⠙⢶⠬⠴⢧⣤⣤⣤⣽⣬⡥⠞⠛⠛⠋⠉⠀⠀⠀⠀⠀⠀⠀\n"
+        };
+        for (String line : lines) {
+            System.out.println(line);
+            Thread.sleep(300);
+        }
     }
     public static void clearScreen() {
         System.out.print("\033[H\033[2J");
