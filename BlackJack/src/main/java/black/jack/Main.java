@@ -27,6 +27,13 @@ public class Main {
         for (int i = 0; i < remainingCards.length; i++) {
             System.out.print("(" + remainingCards[i][0] + " " + remainingCards[i][1] + ")");
         }
+        System.out.print("\n\n");
+        int [][] discardList = {{1 , 2}, {3,3}, {1,9}};
+        int [][] myList = {{1 , 1}, {2,3}, {3,9}};
+        int [][] discardedCards = discardCards(myList, discardList);
+        for (int i = 0; i < discardedCards.length; i++) {
+            System.out.print("(" + discardedCards[i][0] + " " + discardedCards[i][1] + ")");
+        }
     }
 
     public static int[][] creatDeckCards() {
@@ -47,11 +54,12 @@ public class Main {
         int [][] newDeck = new int [size][2];
         int index = 0;
         for (int i = suit; i <= 4 ; i++) {
-            for (int j = (suit == i) ? cardNumber : 1; j <= 13; j++) {
+            for (int j = cardNumber; j <= 13; j++) {
                 newDeck[index][0] = j;
                 newDeck[index][1] = i;
                 index++;
             }
+            cardNumber = 1;
         }
         return newDeck;
     }
@@ -101,6 +109,23 @@ public class Main {
         }
 
         return result;
+    }
+
+    public static int [][] discardCards(int [][] stack, int [][] discardedCards) {
+        int size = stack.length + discardedCards.length;
+        int [][] deck = new int [size][2];
+        int i;
+        int sizeOfDiscardedCards = discardedCards.length;
+        for (i = 0; i < stack.length; i++) {
+            deck[i][0] = stack[i][0];
+            deck[i][1] = stack[i][1];
+        }
+        for (int j = 0; j < discardedCards.length; j++) {
+            deck[i][0] = discardedCards[j][0];
+            deck[i][1] = discardedCards[j][1];
+            i++;
+        }
+        return deck;
     }
 
     public static List<int [][]> drawCard(int [][] deck) {
