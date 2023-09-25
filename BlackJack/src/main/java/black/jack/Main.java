@@ -62,7 +62,7 @@ public class Main {
         return newDeck;
     }
 
-    public static List<int [][]> extractIndexCard(int [][] deck, int index) {
+    public static int [][][] extractIndexCard(int [][] deck, int index) {
         int size = deck.length - 1;
         int[][] extractedCard = new int[1][2];
         int[][] remainingDeck = new int[size][2];
@@ -76,19 +76,19 @@ public class Main {
                 count++;
             }
         }
-        List<int[][]> result = new ArrayList<>();
-        result.add(extractedCard);
-        result.add(remainingDeck);
+        int[][][] result = new int[2][][];
+        result[0] = extractedCard;
+        result[1] = remainingDeck;
         return result;
     }
 
-    public static List<int[][]> draw_n_cards(int[][] deck, int n) {
-        List<int[][]> result = new ArrayList<>();
+    public static int[][][] draw_n_cards(int[][] deck, int n) {
+        int[][][] result = new int [2][][];
         int size = deck.length;
 
         if (n >= size) {
-            result.add(deck);
-            result.add(new int[0][2]);
+            result[0] = deck;
+            result[1] = new int[0][2];
         } else {
             int[][] drawnCards = new int[n][2];
             int[][] remainingCards = new int[size - n][2];
@@ -102,8 +102,8 @@ public class Main {
                 remainingCards[i - n][0] = deck[i][0];
                 remainingCards[i - n][1] = deck[i][1];
             }
-            result.add(drawnCards);
-            result.add(remainingCards);
+            result[0] = drawnCards;
+            result[1] = remainingCards;
         }
 
         return result;
@@ -126,24 +126,24 @@ public class Main {
         return deck;
     }
 
-    public static List<int [][]> drawCard(int [][] deck) {
+    public static int [][][] drawCard(int [][] deck) {
         int n = new Random().nextInt(deck.length);
-        List<int [][]> resList = extractIndexCard(deck, n);
+        int [][][] resList = extractIndexCard(deck, n);
         return resList;
     }
 
     public static int[][] shuffleDeck(int [][] deck) {
         int [][] shuffledDeck = new int [deck.length][2];
-        List<int [][]> cardList = drawCard(deck);
-        int [][] newDeck = cardList.get(1);
+        int [][][] cardList = drawCard(deck);
+        int [][] newDeck = cardList[1];
         int count = 0;
-        while (!cardList.isEmpty()) {
-            shuffledDeck[count] = cardList.get(0)[0];
+        while (cardList[1] != null) {
+            shuffledDeck[count] = cardList[0][0];
             if (newDeck.length == 0) {
                 break;
             }
             cardList = drawCard(newDeck);
-            newDeck = cardList.get(1);
+            newDeck = cardList[1];
             count++;
         }
         return shuffledDeck;
