@@ -1,15 +1,14 @@
 package black.jack;
 import black.jack.Enums.Colors;
 import java.util.*;
-import java.util.List;
 
 public class Main {
     public static void main(String[] args) throws InterruptedException {
         art();
-        gameMenu();
-        winMessage();
-        loseMessage();
-        tieMessage();
+        //gameMenu();
+        //winMessage();
+        //loseMessage();
+        //tieMessage();
     }
 
     public static void startGame () throws InterruptedException {
@@ -20,7 +19,8 @@ public class Main {
             int choice = scanner.nextInt();
             switch (choice) {
                 case 1:
-
+                    clearScreen();
+                    playBlackjack();
                     break;
                 case 2:
                     gameRules();
@@ -127,7 +127,7 @@ public class Main {
     }
 
     public static int [][][] drawCard(int [][] deck) {
-        int n = new Random().nextInt(deck.length);
+        int n = new Random().nextInt(deck.length / 2 + 1);
         int [][][] resList = extractIndexCard(deck, n);
         return resList;
     }
@@ -148,20 +148,137 @@ public class Main {
         }
         return shuffledDeck;
     }
+
+    public static int [][] readyDeck() {
+        int [][] deck = constructDeckFromCard(1, 1);
+        return shuffleDeck(deck);
+    }
+
+    public static void compareScores(int dealerScore, int playerScore) throws InterruptedException {
+        if (dealerScore == playerScore) {
+            tieMessage();
+        } else if (dealerScore <= 21 && playerScore <= 21) {
+            if (dealerScore < playerScore) {
+                winMessage();
+            } else {
+                loseMessage();
+            }
+        }
+    }
+    public static void hitOrStand(int [][] deck, int [][] playerHand) {
+        playerOptions();
+        Scanner scanner = new Scanner(System.in);
+        System.out.print(Colors.RESET.getColor() +"\n\nEnter Your Choice : " + Colors.GREEN.getColor());
+        int choice = scanner.nextInt();
+        switch (choice) {
+            case 1:
+                int[][][] drawResult = draw_n_cards(deck, 1);
+                int[][] newCard = drawResult[0];
+                deck = drawResult[1];
+                playerHand = discardCards(playerHand, newCard);
+                break;
+            case 2:
+                compareScores();
+                break;
+            default:
+                System.out.println(Colors.RED.getColor() +"\n\nInvalid choice. Please try again.");
+                waitForEnter();
+            }
+    }
+
+    public static int calculateDealerScore(int[][] dealerHand) {
+        int score = 0;
+        int numAces = 0;
+        for (int[] card : dealerHand) {
+            int cardValue = card[0];
+            if (cardValue >= 10) {
+                score += 10;
+            } else if (cardValue == 1) {
+                score += 11;
+                numAces++;
+            } else {
+                score += cardValue;
+            }
+        }
+        while (score > 21 && numAces > 0) {
+            score -= 10;
+            numAces--;
+        }
+        return score;
+    }
+
+    public static int calculatePlayerScore(int[][] playerHand) {
+        int score = 0;
+        int numAces = 0;
+        for (int[] card : playerHand) {
+            int cardValue = card[0];
+            if (cardValue >= 10) {
+                score += 10;
+            } else if (cardValue == 1) {
+                score += 11;
+                numAces++;
+            } else {
+                score += cardValue;
+            }
+        }
+        while (score > 21 && numAces > 0) {
+            score -= 10;
+            numAces--;
+        }
+        return score;
+    }
+
+    public static void showDealerHand(int [][] cards) {
+        System.out.println("Dealer Hand :");
+        for (int i = 0; i < cards.length; i++) {
+            System.out.print(" " + "(" + cards[i][0] + " " + cards[i][1] + ")");
+        }
+        int dealerScore = calculateDealerScore(cards);
+        System.out.println("Dealer Score :");
+        System.out.println(dealerScore);
+    }
+    public static void showPlayerHand(int [][] cards) {
+        System.out.println("Player Hand :");
+        for (int i = 0; i < cards.length; i++) {
+            System.out.print(" " + "(" + cards[i][0] + " " + cards[i][1] + ")");
+        }
+        int playerScore = calculatePlayerScore(cards);
+        System.out.println("Player Score :");
+        System.out.println(playerScore);
+    }
+    public static void playBlackjack() {
+        int[][] deck = readyDeck();
+
+        // Initialize player and dealer hands
+        int[][] playerHand = new int[0][2];
+        int[][] dealerHand = new int[0][2];
+
+        // Deal the initial cards
+        int[][][] dealResult = draw_n_cards(deck, 3);
+        playerHand = dealResult[0];
+        deck = dealResult[1];
+
+        dealResult = draw_n_cards(deck, 2);
+        dealerHand = dealResult[0];
+        deck = dealResult[1];
+        showDealerHand(dealerHand);
+        showPlayerHand(playerHand);
+        hitOrStand(deck, playerHand);
+    }
     public static void art() throws InterruptedException {
         System.out.print("\n\n");
         String lines[] = {
                 '\t'+"\t\t       "+ Colors.RESET.getColor() +"                     ⠀⠀⠀     ⠀⠀⠀     ⠀⠀⠀  ⠀            ⠀⠀⠀  ⠀     ⠀⠀⠀  ⠀     ⠀⠀⠀  ⠀     ⠀⠀⠀  ⠀     ⠀⠀⠀    ⠀⠀⠀⠀⠀ ⣀⣤⣴⣄⠀⢀⣀⣀⣀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n" +
                 '\t'+"\t\t         "+ Colors.RESET.getColor() +"                ⠀     ⠀⠀⠀     ⠀⠀⠀     ⠀⠀⠀     ⠀⠀⠀            ⠀⠀⠀     ⠀⠀⠀     ⠀⠀⠀     ⠀⠀⠀     ⠀⠀⠀     ⠀⠀⠀  ⣠⣴⣾⣿⣿⣿⣿⣿⣇⢸⣿⣿⣿⣿⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n" +
-                '\t'+"\t\t  "+ Colors.RED.getColor() +"                              ███████████  ████                     █████               █████                    █████⠀ "+ Colors.RESET.getColor() +"⠀⢿⣿⣿⣿⠛⠿⣿⣿⣿⡀⢻⣿⣿⣿⣿⠀⣸⣿⣶⣦⣄⠀⠀⠀⠀⠀⠀⠀\n" +
-                '\t'+"\t\t    "+ Colors.RED.getColor() +"                          ░░███░░░░░███░░███                    ░░███               ░░███                    ░░███   ⠀ "+ Colors.RESET.getColor() +"⠀⠘⣿⣿⠃⠀⠀⠀⠈⠙⣧⠈⢿⣿⣿⣿⠀⣿⣿⣿⣿⡟⢀⡀⠀⠀⠀⠀⠀\n" +
-                '\t'+"\t\t      "+ Colors.RED.getColor() +"                         ░███    ░███ ░███   ██████    ██████  ░███ █████          ░███   ██████    ██████  ░███ █████⠀"+ Colors.RESET.getColor() +"⠀⢹⡇⠀⠀⠀⠀⣀⣠⣿⣇⠘⣿⣿⣿⠀⣿⣿⣿⡿⠀⣾⣿⣷⣄⠀⠀⠀\n" +
-                '\t'+"\t\t     "+ Colors.RED.getColor() +"                          ░██████████  ░███  ░░░░░███  ███░░███ ░███░░███           ░███  ░░░░░███  ███░░███ ░███░░███  ⠀"+ Colors.RESET.getColor() +"⠀⠀⢿⣦⣤⣾⡆⣹⣿⣿⣿⡄⠹⣿⣿⠀⣿⣿⣿⠃⣸⣿⣿⣿⣿⣷⠀⠀\n" +
-                '\t'+"\t\t       "+ Colors.RED.getColor() +"                        ░███░░░░░███ ░███   ███████ ░███ ░░░  ░██████░            ░███   ███████ ░███ ░░░  ░██████░ ⠀ ⠀"+ Colors.RESET.getColor() +"⠀⠀⠘⣿⣿⣿⣿⣿⣿⣿⣿⠗⢀⣿⡏⠀⣿⣿⡏⢠⣿⣿⣿⣿⠟⠁⠀⠀\n" +
-                '\t'+"\t\t        "+ Colors.RED.getColor() +"                       ░███░░░░░███ ░███   ███████ ░███ ░░░  ░██████░            ░███   ███████ ░███ ░░░  ░██████░⠀⠀  ⠀⠀"+ Colors.RESET.getColor() +"⠀⠸⢿⠿⠟⠋⠉⠁⠀⠐⠚⠛⠃⣰⣿⡿⠀⣾⣿⣿⡿⠃⠀⠀⠀⠀\n" +
-                '\t'+"\t\t        "+ Colors.RED.getColor() +"                       ░███    ░███ ░███  ███░░███ ░███  ███ ░███░░███     ███   ░███  ███░░███ ░███  ███ ░███░░███ ⠀⠀⠀⠀⠀⠀"+ Colors.RESET.getColor() +"⠀⠀⠀⠀⠀⠀⠀⠀⠀⠐⠻⠿⠿⠃⣸⣿⣿⠋⠀⠀⠀⠀⠀⠀\n" +
-                '\t'+"\t\t        "+ Colors.RED.getColor() +"                        ███████████  █████░░████████░░██████  ████ █████   ░░████████  ░░████████░░██████  ████ █████⠀⠀⠀⠀⠀"+ Colors.RESET.getColor() +"⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠢⣤⣾⣿⠟⠁⠀⠀⠀⠀⠀⠀⠀\n" +
-                '\t'+"\t\t         "+ Colors.RED.getColor() +"                      ░░░░░░░░░░░  ░░░░░  ░░░░░░░░  ░░░░░░  ░░░░ ░░░░░     ░░░░░░░░    ░░░░░░░░  ░░░░░░  ░░░░ ░░░░░⠀⠀⠀⠀⠀⠀"+ Colors.RESET.getColor() +"⠀⠀⠀⠀     ⠀⠀⠀⠀⠈⠛⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀\n"
+                '\t'+"\t\t  "+ Colors.RED.getColor() +"                              ███████████  ████                     █████      "+ Colors.RESET.getColor() +"         █████                    █████⠀ "+ Colors.BROWN.getColor() +"⠀⢿⣿⣿⣿⠛⠿⣿⣿⣿⡀⢻⣿⣿⣿⣿⠀⣸⣿⣶⣦⣄⠀⠀⠀⠀⠀⠀⠀\n" +
+                '\t'+"\t\t    "+ Colors.RED.getColor() +"                          ░░███░░░░░███░░███                    ░░███          "+ Colors.RESET.getColor() +"     ░░███                    ░░███   ⠀ "+ Colors.BROWN.getColor() +"⠀⠘⣿⣿⠃⠀⠀⠀⠈⠙⣧⠈⢿⣿⣿⣿⠀⣿⣿⣿⣿⡟⢀⡀⠀⠀⠀⠀⠀\n" +
+                '\t'+"\t\t      "+ Colors.RED.getColor() +"                         ░███    ░███ ░███   ██████    ██████  ░███ █████    "+ Colors.RESET.getColor() +"      ░███   ██████    ██████  ░███ █████⠀"+ Colors.BROWN.getColor() +"⠀⢹⡇⠀⠀⠀⠀⣀⣠⣿⣇⠘⣿⣿⣿⠀⣿⣿⣿⡿⠀⣾⣿⣷⣄⠀⠀⠀\n" +
+                '\t'+"\t\t     "+ Colors.RED.getColor() +"                          ░██████████  ░███  ░░░░░███  ███░░███ ░███░░███     "+ Colors.RESET.getColor() +"      ░███  ░░░░░███  ███░░███ ░███░░███  ⠀"+ Colors.BROWN.getColor() +"⠀⠀⢿⣦⣤⣾⡆⣹⣿⣿⣿⡄⠹⣿⣿⠀⣿⣿⣿⠃⣸⣿⣿⣿⣿⣷⠀⠀\n" +
+                '\t'+"\t\t       "+ Colors.RED.getColor() +"                        ░███░░░░░███ ░███   ███████ ░███ ░░░  ░██████░     "+ Colors.RESET.getColor() +"       ░███   ███████ ░███ ░░░  ░██████░ ⠀ ⠀"+ Colors.BROWN.getColor() +"⠀⠀⠘⣿⣿⣿⣿⣿⣿⣿⣿⠗⢀⣿⡏⠀⣿⣿⡏⢠⣿⣿⣿⣿⠟⠁⠀⠀\n" +
+                '\t'+"\t\t        "+ Colors.RED.getColor() +"                       ░███░░░░░███ ░███   ███████ ░███ ░░░  ░██████░   "+ Colors.RESET.getColor() +"         ░███   ███████ ░███ ░░░  ░██████░⠀⠀  ⠀⠀"+ Colors.BROWN.getColor() +"⠀⠸⢿⠿⠟⠋⠉⠁⠀⠐⠚⠛⠃⣰⣿⡿⠀⣾⣿⣿⡿⠃⠀⠀⠀⠀\n" +
+                '\t'+"\t\t        "+ Colors.RED.getColor() +"                       ░███    ░███ ░███  ███░░███ ░███  ███ ░███░░███   "+ Colors.RESET.getColor() +"  ███   ░███  ███░░███ ░███  ███ ░███░░███ ⠀⠀⠀⠀⠀⠀"+ Colors.BROWN.getColor() +"⠀⠀⠀⠀⠀⠀⠀⠀⠀⠐⠻⠿⠿⠃⣸⣿⣿⠋⠀⠀⠀⠀⠀⠀\n" +
+                '\t'+"\t\t        "+ Colors.RED.getColor() +"                        ███████████  █████░░████████░░██████  ████ █████  "+ Colors.RESET.getColor() +" ░░████████  ░░████████░░██████  ████ █████⠀⠀⠀⠀⠀"+ Colors.BROWN.getColor() +"⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠢⣤⣾⣿⠟⠁⠀⠀⠀⠀⠀⠀⠀\n" +
+                '\t'+"\t\t         "+ Colors.RED.getColor() +"                      ░░░░░░░░░░░  ░░░░░  ░░░░░░░░  ░░░░░░  ░░░░ ░░░░░   "+ Colors.RESET.getColor() +"  ░░░░░░░░    ░░░░░░░░  ░░░░░░  ░░░░ ░░░░░⠀⠀⠀⠀⠀⠀"+ Colors.BROWN.getColor() +"⠀⠀⠀⠀     ⠀⠀⠀⠀⠈⠛⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀\n"
         };
         for (String line : lines) {
             System.out.println(line);
