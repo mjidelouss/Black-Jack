@@ -43,16 +43,18 @@ public class PlayerService {
         }
         return score;
     }
-    public static void playerHit(int[][] deck, int[][] dealerHand, int[][] playerHand, int dealerScore, int playerScore) throws InterruptedException {
+    public static int playerHit(int[][] deck, int[][] dealerHand, int[][] playerHand, int dealerScore, int playerScore, int bet, int bank) throws InterruptedException {
         if (playerScore > 21) {
             loseMessage();
+            bank -= bet;
             waitForEnter();
         } else {
-            hitOrStand(deck, playerHand, dealerHand, playerScore, dealerScore);
+            hitOrStand(deck, playerHand, dealerHand, playerScore, dealerScore, bet, bank);
         }
+        return bank;
     }
 
-    public static void hitOrStand(int[][] deck, int[][] playerHand, int[][] dealerHand, int playerScore, int dealerScore) throws InterruptedException {
+    public static int hitOrStand(int[][] deck, int[][] playerHand, int[][] dealerHand, int playerScore, int dealerScore, int bet, int bank) throws InterruptedException {
         playerOptions();
         Scanner scanner = new Scanner(System.in);
         System.out.print(Colors.RESET.getColor() + "\n\nEnter Your Choice : " + Colors.GREEN.getColor());
@@ -65,15 +67,16 @@ public class PlayerService {
                 playerHand = discardCards(playerHand, newCard);
                 playerScore = showPlayerHand(playerHand);
                 dealerScore = showDealerHand(dealerHand);
-                playerHit(deck, dealerHand, playerHand, dealerScore, playerScore);
+                bank = playerHit(deck, dealerHand, playerHand, dealerScore, playerScore, bet, bank);
                 break;
             case 2:
-                compareScores(deck, dealerHand, playerHand, dealerScore, playerScore);
+                bank = compareScores(deck, dealerHand, playerHand, dealerScore, playerScore, bet, bank);
                 break;
             default:
                 System.out.println(Colors.RED.getColor() + "\n\nInvalid choice. Please try again.");
                 waitForEnter();
         }
+        return bank;
     }
 
 }

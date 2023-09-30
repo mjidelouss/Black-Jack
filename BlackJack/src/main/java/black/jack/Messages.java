@@ -81,6 +81,37 @@ public class Messages {
         scanner.nextLine();
     }
 
+    public static void betMoney() throws InterruptedException {
+        System.out.print("\n\n\n");
+        System.out.println('\t'+ Colors.RESET.getColor() +"\t                                            ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️");
+        System.out.println('\t'+ Colors.RESET.getColor() +"\t                                            ◼️                                                                               ◼️");
+        System.out.println('\t'+ Colors.RESET.getColor() +"\t                                            ◼️                                        🅱🅴🆃                                   ◼️");
+        System.out.println('\t'+ Colors.RESET.getColor() +"\t                                            ◼️                                     ♣️ ♥️ ♠️ ♦️                               ◼️");
+        System.out.println('\t'+ Colors.RESET.getColor() +"\t                                            ◼️                                                                               ◼️");
+        System.out.println('\t'+ Colors.RESET.getColor() +"\t                                            ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️  ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️");
+        System.out.println('\t'+ Colors.RESET.getColor() +"\t                                            ◼️                                                                               ◼️");
+        System.out.println('\t'+ Colors.RESET.getColor() +"\t                                            ◼️ (1) - 💸 Bet 1$                                                               ◼️");
+        System.out.println('\t'+ Colors.RESET.getColor() +"\t                                            ◼️ (2) - 💸 Bet 5$       ◼️                                                       ◼️");
+        System.out.println('\t'+ Colors.RESET.getColor() +"\t                                            ◼️ (3) - 💸 Bet 25$                                                              ◼️️");
+        System.out.println('\t'+ Colors.RESET.getColor() +"\t                                            ◼️ (4) - 💸 Bet 50$                   ◼️                                          ◼️");
+        System.out.println('\t'+ Colors.RESET.getColor() +"\t                                            ◼️ (5) - 💸 Bet 100$                                                             ◼️");
+        System.out.println('\t'+ Colors.RESET.getColor() +"\t                                            ◼️ (6) - 💸 Bet 500$                                                             ◼️");
+        System.out.println('\t'+ Colors.RESET.getColor() +"\t                                            ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️");
+    }
+
+    public static void playerBank(int bank) throws InterruptedException {
+        System.out.print("\n\n\n");
+        System.out.println('\t'+ Colors.RESET.getColor() +"\t                                            ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️");
+        System.out.println('\t'+ Colors.RESET.getColor() +"\t                                            ◼️                                                                               ◼️");
+        System.out.println('\t'+ Colors.RESET.getColor() +"\t                                            ◼️                                       🅑🅐🅝🅚                                   ◼️");
+        System.out.println('\t'+ Colors.RESET.getColor() +"\t                                            ◼️                                    ♣️ ♥️ ♠️ ♦️                                ◼️");
+        System.out.println('\t'+ Colors.RESET.getColor() +"\t                                            ◼️                                                                               ◼️");
+        System.out.println('\t'+ Colors.RESET.getColor() +"\t                                            ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️  ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️");
+        System.out.println('\t'+ Colors.RESET.getColor() +"\t                                            ◼️                                                                               ◼️");
+        System.out.println('\t'+ Colors.RESET.getColor() +"\t                                            ◼️ Bank :  "+bank+" 💸                                                                ◼️");
+        System.out.println('\t'+ Colors.RESET.getColor() +"\t                                            ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️");
+    }
+
     public static void quitApp() throws InterruptedException {
         String[] lines = {
                 "\n\n\n\n\n\n",

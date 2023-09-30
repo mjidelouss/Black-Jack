@@ -35,7 +35,7 @@ public class Game {
             }
         }
     }
-    public static void compareScores(int[][] deck, int[][] dealerHand, int [][]playerHand, int dealerScore, int playerScore) throws InterruptedException {
+    public static int compareScores(int[][] deck, int[][] dealerHand, int [][]playerHand, int dealerScore, int playerScore, int bet, int bank) throws InterruptedException {
         while (dealerScore < 17) {
             int[][][] drawResult = draw_n_cards(deck, 1);
             int[][] newCard = drawResult[0];
@@ -46,22 +46,61 @@ public class Game {
         }
         if (dealerScore > 21) {
             winMessage();
+            bet *= 2;
+            bank += bet;
             waitForEnter();
-        } else if (dealerScore <= 21) {
+        } else {
             if (dealerScore == playerScore) {
                 tieMessage();
                 waitForEnter();
             } else if (dealerScore < playerScore && playerScore <= 21) {
                 winMessage();
+                bet *= 2;
+                bank += bet;
                 waitForEnter();
             } else {
                 loseMessage();
+                bank -= bet;
                 waitForEnter();
             }
         }
+        return bank;
     }
-
+    public static int betOptions() throws InterruptedException {
+        betMoney();
+        int bet = 0;
+        Scanner scanner = new Scanner(System.in);
+        System.out.print(Colors.RESET.getColor() + "\n\nEnter Your Choice : " + Colors.GREEN.getColor());
+        int choice = scanner.nextInt();
+        switch (choice) {
+            case 1:
+                bet += 1;
+                break;
+            case 2:
+                bet += 5;
+                break;
+            case 3:
+                bet += 25;
+                break;
+            case 4:
+                bet += 50;
+                break;
+            case 5:
+                bet += 100;
+                break;
+            case 6:
+                bet += 500;
+                break;
+            default:
+                System.out.println(Colors.RED.getColor() + "\n\nInvalid choice. Please try again.");
+                waitForEnter();
+        }
+        return bet;
+    }
     public static void playBlackjack() throws InterruptedException {
+        int bank = 900;
+        playerBank(bank);
+        int bet = betOptions();
         int[][] deck = readyDeck();
 
         // Initialize player and dealer hands
@@ -78,6 +117,7 @@ public class Game {
         deck = dealResult[1];
         int playerScore = showPlayerHand(playerHand);
         int dealerScore = showDealerHand(dealerHand);
-        hitOrStand(deck, playerHand, dealerHand, playerScore, dealerScore);
+        bank = hitOrStand(deck, playerHand, dealerHand, playerScore, dealerScore, bet, bank);
+        playerBank(bank);
     }
 }
