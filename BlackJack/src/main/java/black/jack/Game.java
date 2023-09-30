@@ -65,8 +65,8 @@ public class Game {
         int[][] deck = readyDeck();
 
         // Initialize player and dealer hands
-        int[][] playerHand = new int[0][2];
-        int[][] dealerHand = new int[0][2];
+        int[][] playerHand;
+        int[][] dealerHand;
 
         // Deal the initial cards
         int[][][] dealResult = draw_n_cards(deck, 2);

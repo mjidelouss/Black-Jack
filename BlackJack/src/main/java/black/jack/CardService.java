@@ -107,6 +107,9 @@ public class CardService {
 
     public static int [][] readyDeck() {
         int [][] deck = constructDeckFromCard(1, 1);
-        return shuffleDeck(deck);
+        int [][] shuffledDeck = shuffleDeck(deck);
+        int n = new Random().nextInt(3)+28;
+        int [][][] result = draw_n_cards(shuffledDeck, n);
+        return result[1];
     }
 }
