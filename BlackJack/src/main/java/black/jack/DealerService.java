@@ -1,16 +1,13 @@
 package black.jack;
 
-import static black.jack.Messages.showCard;
+import static black.jack.Messages.showCards;
+import static black.jack.Messages.showCardsWithBack;
 
 public class DealerService {
 
     public static int showDealerHand(int [][] cards) {
         System.out.println("Dealer Hand :");
-        for (int[] card : cards) {
-            int cardValue = card[0];
-            int cardSuit = card[1];
-            showCard(cardValue, cardSuit);
-        }
+        showCardsWithBack(cards);
         int dealerScore = calculateDealerScore(cards);
         System.out.print("\nDealer Score :\n");
         System.out.println(dealerScore);

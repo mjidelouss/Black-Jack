@@ -2,6 +2,7 @@ package black.jack;
 
 import black.jack.Enums.Colors;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 import static black.jack.CardService.*;
@@ -20,8 +21,22 @@ public class Game {
             int choice = scanner.nextInt();
             switch (choice) {
                 case 1:
+                    int bank = 900;
+                    int[][] deck = readyDeck();
                     clearScreen();
-                    playBlackjack();
+                    System.out.println("INITIALE DECK :");
+                    System.out.println(Arrays.deepToString(deck));
+                    playerBank(bank);
+                    Object[] result = playBlackjack(bank, deck);
+                    int [][] newdeck = (int [][]) result[1];
+                    bank = (int) result[0];
+                    while (newdeck.length > 3) {
+                        Object[] game = playBlackjack(bank, newdeck);
+                        newdeck = (int[][]) game[1];
+                        System.out.println("NEW DECK :");
+                        System.out.println(Arrays.deepToString(newdeck));
+                        bank = (int) game[0];
+                    }
                     break;
                 case 2:
                     gameRules();
@@ -35,7 +50,8 @@ public class Game {
             }
         }
     }
-    public static int compareScores(int[][] deck, int[][] dealerHand, int [][]playerHand, int dealerScore, int playerScore, int bet, int bank) throws InterruptedException {
+    public static Object[] compareScores(int[][] deck, int[][] dealerHand, int [][]playerHand, int dealerScore, int playerScore, int bet, int bank) throws InterruptedException {
+        Object[] result = new Object[2];
         while (dealerScore < 17) {
             int[][][] drawResult = draw_n_cards(deck, 1);
             int[][] newCard = drawResult[0];
@@ -46,7 +62,7 @@ public class Game {
         }
         if (dealerScore > 21) {
             winMessage();
-            bet *= 2;
+            bet = bet * 2;
             bank += bet;
             waitForEnter();
         } else {
@@ -55,7 +71,7 @@ public class Game {
                 waitForEnter();
             } else if (dealerScore < playerScore && playerScore <= 21) {
                 winMessage();
-                bet *= 2;
+                bet = bet * 2;
                 bank += bet;
                 waitForEnter();
             } else {
@@ -64,7 +80,9 @@ public class Game {
                 waitForEnter();
             }
         }
-        return bank;
+        result[0] = bank;
+        result[1] = deck;
+        return result;
     }
     public static int betOptions() throws InterruptedException {
         betMoney();
@@ -97,11 +115,9 @@ public class Game {
         }
         return bet;
     }
-    public static void playBlackjack() throws InterruptedException {
-        int bank = 900;
-        playerBank(bank);
+    public static Object[] playBlackjack(int bank, int [][] deck) throws InterruptedException {
+        Object[] result = new Object[2];
         int bet = betOptions();
-        int[][] deck = readyDeck();
 
         // Initialize player and dealer hands
         int[][] playerHand;
@@ -117,7 +133,9 @@ public class Game {
         deck = dealResult[1];
         int playerScore = showPlayerHand(playerHand);
         int dealerScore = showDealerHand(dealerHand);
-        bank = hitOrStand(deck, playerHand, dealerHand, playerScore, dealerScore, bet, bank);
+        result = hitOrStand(deck, playerHand, dealerHand, playerScore, dealerScore, bet, bank);
+        bank = (int)result[0];
         playerBank(bank);
+        return result;
     }
 }

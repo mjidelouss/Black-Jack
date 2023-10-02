@@ -269,53 +269,209 @@ public class Messages {
         Scanner scanner = new Scanner(System.in);
         scanner.nextLine();
     }
-
-    public static void showCard(int cardValue, int cardSuit) {
-        // Map card values to card representations
-        String cardValueStr;
-        switch (cardValue) {
-            case 1:
-                cardValueStr = "A";
-                break;
-            case 11:
-                cardValueStr = "J";
-                break;
-            case 12:
-                cardValueStr = "Q";
-                break;
-            case 13:
-                cardValueStr = "K";
-                break;
-            default:
-                cardValueStr = String.valueOf(cardValue);
-                break;
+    public static void showCards(int[][] cards) {
+        // Check if there are no cards
+        if (cards.length == 0) {
+            System.out.println("No cards to display.");
+            return;
         }
 
-        // Map card suits to suit representations
-        String cardSuitStr;
-        switch (cardSuit) {
-            case 1:
-                cardSuitStr = "♥️"; // Hearts
-                break;
-            case 2:
-                cardSuitStr = "♦️"; // Diamonds
-                break;
-            case 3:
-                cardSuitStr = "♠️"; // Spades
-                break;
-            case 4:
-                cardSuitStr = "♣️"; // Clubs
-                break;
-            default:
-                cardSuitStr = "?"; // Unknown suit
-                break;
+        // Determine the maximum length of card value strings
+        int maxLength = 0;
+        for (int[] card : cards) {
+            int cardValue = card[0];
+            String cardValueStr;
+            switch (cardValue) {
+                case 1:
+                    cardValueStr = "A";
+                    break;
+                case 11:
+                    cardValueStr = "J";
+                    break;
+                case 12:
+                    cardValueStr = "Q";
+                    break;
+                case 13:
+                    cardValueStr = "K";
+                    break;
+                default:
+                    cardValueStr = String.valueOf(cardValue);
+                    break;
+            }
+            maxLength = Math.max(maxLength, cardValueStr.length());
         }
 
-        // Print the card representation
-        System.out.println(" _______ ");
-        System.out.println("|       |");
-        System.out.println("|   " + cardValueStr + "   |");
-        System.out.println("|   " + cardSuitStr + "   |");
-        System.out.println("|_______|");
+        // Print the cards
+        for (int row = 0; row < 5; row++) { // 5 rows for each card
+            for (int[] card : cards) {
+                int cardValue = card[0];
+                int cardSuit = card[1];
+
+                String cardValueStr, cardSuitStr;
+                switch (cardValue) {
+                    case 1:
+                        cardValueStr = "A";
+                        break;
+                    case 11:
+                        cardValueStr = "J";
+                        break;
+                    case 12:
+                        cardValueStr = "Q";
+                        break;
+                    case 13:
+                        cardValueStr = "K";
+                        break;
+                    default:
+                        cardValueStr = String.valueOf(cardValue);
+                        break;
+                }
+
+                switch (cardSuit) {
+                    case 1:
+                        cardSuitStr = "♥️"; // Hearts
+                        break;
+                    case 2:
+                        cardSuitStr = "♦️"; // Diamonds
+                        break;
+                    case 3:
+                        cardSuitStr = "♠️"; // Spades
+                        break;
+                    case 4:
+                        cardSuitStr = "♣️"; // Clubs
+                        break;
+                    default:
+                        cardSuitStr = "?"; // Unknown suit
+                        break;
+                }
+
+                if (row == 0) {
+                    System.out.print(" _______  ");
+                } else if (row == 1) {
+                    String padding = " ".repeat(maxLength - cardValueStr.length());
+                    System.out.print("|       | ");
+                } else if (row == 2) {
+                    String padding = " ".repeat(maxLength - cardValueStr.length());
+                    System.out.print("|   " + cardValueStr + "   | ");
+                } else if (row == 3) {
+                    System.out.print("|   " + cardSuitStr + "   | ");
+                } else if (row == 4) {
+                    System.out.print("|_______| ");
+                }
+            }
+            System.out.println();
+        }
     }
+    public static void showCardsWithBack(int[][] cards) {
+        // Check if there are no cards
+        if (cards.length == 0) {
+            System.out.println("No cards to display.");
+            return;
+        }
+
+        // Determine the maximum length of card value strings
+        int maxLength = 0;
+        for (int[] card : cards) {
+            int cardValue = card[0];
+            String cardValueStr;
+            switch (cardValue) {
+                case 1:
+                    cardValueStr = "A";
+                    break;
+                case 11:
+                    cardValueStr = "J";
+                    break;
+                case 12:
+                    cardValueStr = "Q";
+                    break;
+                case 13:
+                    cardValueStr = "K";
+                    break;
+                default:
+                    cardValueStr = String.valueOf(cardValue);
+                    break;
+            }
+            maxLength = Math.max(maxLength, cardValueStr.length());
+        }
+
+        // Print the cards
+        for (int row = 0; row < 5; row++) { // 5 rows for each card
+            for (int i = 0; i < cards.length; i++) {
+                int[] card = cards[i];
+                int cardValue = card[0];
+                int cardSuit = card[1];
+
+                String cardValueStr, cardSuitStr;
+                switch (cardValue) {
+                    case 1:
+                        cardValueStr = "A";
+                        break;
+                    case 11:
+                        cardValueStr = "J";
+                        break;
+                    case 12:
+                        cardValueStr = "Q";
+                        break;
+                    case 13:
+                        cardValueStr = "K";
+                        break;
+                    default:
+                        cardValueStr = String.valueOf(cardValue);
+                        break;
+                }
+
+                switch (cardSuit) {
+                    case 1:
+                        cardSuitStr = "♥️"; // Hearts
+                        break;
+                    case 2:
+                        cardSuitStr = "♦️"; // Diamonds
+                        break;
+                    case 3:
+                        cardSuitStr = "♠️"; // Spades
+                        break;
+                    case 4:
+                        cardSuitStr = "♣️"; // Clubs
+                        break;
+                    default:
+                        cardSuitStr = "?"; // Unknown suit
+                        break;
+                }
+
+                if (row == 0) {
+                    if (i == 0) {
+                        System.out.print(" _______  "); // Show the back of the first card
+                    } else {
+                        System.out.print(" _______  "); // Show the face of other cards
+                    }
+                } else if (row == 1) {
+                    if (i == 0) {
+                        System.out.print("|///////| "); // Show the back of the first card
+                    } else {
+                        System.out.print("|       | "); // Show the face of other cards
+                    }
+                } else if (row == 2) {
+                    if (i == 0) {
+                        System.out.print("|///////| "); // Show the back of the first card
+                    } else {
+                        String padding = " ".repeat(maxLength - cardValueStr.length());
+                        System.out.print("|   " + cardValueStr + padding + "   | "); // Show the face of other cards
+                    }
+                } else if (row == 3) {
+                    if (i == 0) {
+                        System.out.print("|///////| "); // Show the back of the first card
+                    } else {
+                        System.out.print("|   " + cardSuitStr + "   | "); // Show the face of other cards
+                    }
+                } else if (row == 4) {
+                    if (i == 0) {
+                        System.out.print("|_______| "); // Show the back of the first card
+                    } else {
+                        System.out.print("|_______| "); // Show the face of other cards
+                    }
+                }
+            }
+            System.out.println();
+        }
+    }
+
 }
