@@ -5,10 +5,14 @@ import static black.jack.Messages.showCardsWithBack;
 
 public class DealerService {
 
-    public static int showDealerHand(int [][] cards) {
-        System.out.println("Dealer Hand :");
-        showCardsWithBack(cards);
+    public static int showDealerHand(int [][] cards, int playerScore, boolean show) {
         int dealerScore = calculateDealerScore(cards);
+        System.out.println("Dealer Hand :");
+        if (playerScore > 21 || (dealerScore >= 17 && show)) {
+            showCards(cards);
+        } else {
+            showCardsWithBack(cards);
+        }
         System.out.print("\nDealer Score :\n");
         System.out.println(dealerScore);
         return dealerScore;

@@ -353,7 +353,7 @@ public class Messages {
                     String padding = " ".repeat(maxLength - cardValueStr.length());
                     System.out.print("|   " + cardValueStr + "   | ");
                 } else if (row == 3) {
-                    System.out.print("|   " + cardSuitStr + "   | ");
+                    System.out.print("|   " + cardSuitStr + "  | ");
                 } else if (row == 4) {
                     System.out.print("|_______| ");
                 }
@@ -460,7 +460,7 @@ public class Messages {
                     if (i == 0) {
                         System.out.print("|///////| "); // Show the back of the first card
                     } else {
-                        System.out.print("|   " + cardSuitStr + "   | "); // Show the face of other cards
+                        System.out.print("|   " + cardSuitStr + "  | "); // Show the face of other cards
                     }
                 } else if (row == 4) {
                     if (i == 0) {

@@ -50,15 +50,22 @@ public class Game {
             }
         }
     }
-    public static Object[] compareScores(int[][] deck, int[][] dealerHand, int [][]playerHand, int dealerScore, int playerScore, int bet, int bank) throws InterruptedException {
+    public static Object[] compareScores(int[][] deck, int[][] dealerHand, int [][]playerHand, int dealerScore, int playerScore, int bet, int bank, int count) throws InterruptedException {
         Object[] result = new Object[2];
         while (dealerScore < 17) {
             int[][][] drawResult = draw_n_cards(deck, 1);
             int[][] newCard = drawResult[0];
             deck = drawResult[1];
+            boolean show = true;
+            count++;
             dealerHand = discardCards(dealerHand, newCard);
             playerScore = showPlayerHand(playerHand);
-            dealerScore = showDealerHand(dealerHand);
+            dealerScore = showDealerHand(dealerHand, playerScore, show);
+        }
+        if (count == 1) {
+            boolean show = true;
+            playerScore = showPlayerHand(playerHand);
+            dealerScore = showDealerHand(dealerHand, playerScore, show);
         }
         if (dealerScore > 21) {
             winMessage();
@@ -131,9 +138,11 @@ public class Game {
         dealResult = draw_n_cards(deck, 2);
         dealerHand = dealResult[0];
         deck = dealResult[1];
+        int count = 0;
+        boolean show = false;
         int playerScore = showPlayerHand(playerHand);
-        int dealerScore = showDealerHand(dealerHand);
-        result = hitOrStand(deck, playerHand, dealerHand, playerScore, dealerScore, bet, bank);
+        int dealerScore = showDealerHand(dealerHand, playerScore, show);
+        result = hitOrStand(deck, playerHand, dealerHand, playerScore, dealerScore, bet, bank, count);
         bank = (int)result[0];
         playerBank(bank);
         return result;
