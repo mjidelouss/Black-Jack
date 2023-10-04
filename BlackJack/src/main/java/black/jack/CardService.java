@@ -110,6 +110,6 @@ public class CardService {
         int [][] shuffledDeck = shuffleDeck(deck);
         int n = new Random().nextInt(3)+28;
         int [][][] result = draw_n_cards(shuffledDeck, n);
-        return result[1];
+        return result[0];
     }
 }

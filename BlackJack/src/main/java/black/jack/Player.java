@@ -4,10 +4,21 @@ public class Player {
     private int bank;
     private int winCount;
     private int loseCount;
-    public Player(int bank, int winCount, int loseCount) {
+
+    public void setTieCount(int tieCount) {
+        this.tieCount = tieCount;
+    }
+
+    public int getTieCount() {
+        return tieCount;
+    }
+
+    private int tieCount;
+    public Player(int bank, int winCount, int loseCount, int tieCount) {
         this.bank = bank;
         this.winCount = winCount;
         this.loseCount = loseCount;
+        this.tieCount = tieCount;
     }
 
     public Player () {

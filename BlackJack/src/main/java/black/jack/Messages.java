@@ -112,6 +112,21 @@ public class Messages {
         System.out.println('\t'+ Colors.RESET.getColor() +"\t                                            ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️");
     }
 
+    public static void playerStatistiques(Player player) throws InterruptedException {
+        System.out.print("\n");
+        System.out.println('\t'+ Colors.RESET.getColor() +"\t                                            ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️");
+        System.out.println('\t'+ Colors.RESET.getColor() +"\t                                            ◼️                                                                               ◼️");
+        System.out.println('\t'+ Colors.RESET.getColor() +"\t                                            ◼️                                 🅢🅣🅐🅣🅘🅢🅣🅘🅠🅤🅔🅢                             ◼️");
+        System.out.println('\t'+ Colors.RESET.getColor() +"\t                                            ◼️                                    ♣️ ♥️ ♠️ ♦️                                ◼️");
+        System.out.println('\t'+ Colors.RESET.getColor() +"\t                                            ◼️                                                                               ◼️");
+        System.out.println('\t'+ Colors.RESET.getColor() +"\t                                            ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️  ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️");
+        System.out.println('\t'+ Colors.RESET.getColor() +"\t                                            ◼️                                                                               ◼️");
+        System.out.println('\t'+ Colors.RESET.getColor() +"\t                                            ◼️ Number of Wins :  "+player.getWinCount()+"                                    ◼️");
+        System.out.println('\t'+ Colors.RESET.getColor() +"\t                                            ◼️ Number of Loses :  "+player.getLoseCount()+"                                  ◼️");
+        System.out.println('\t'+ Colors.RESET.getColor() +"\t                                            ◼️ Number of Ties :  "+player.getTieCount()+"                                    ◼️");
+        System.out.println('\t'+ Colors.RESET.getColor() +"\t                                            ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️");
+    }
+
     public static void quitApp() throws InterruptedException {
         String[] lines = {
                 "\n\n\n\n\n\n",

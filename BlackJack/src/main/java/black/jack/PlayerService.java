@@ -42,9 +42,12 @@ public class PlayerService {
     public static Object[] playerHit(int[][] deck, int[][] dealerHand, int[][] playerHand, int dealerScore, int playerScore, int bet, int count, Player player) throws InterruptedException {
         Object[] result = new Object[2];
         int bank = player.getBank();
+        int loseCount;
         if (playerScore > 21) {
             loseMessage();
             player.setBank(bank -= bet);
+            loseCount = player.getLoseCount() + 1;
+            player.setLoseCount(loseCount);
             waitForEnter();
         } else {
             hitOrStand(deck, playerHand, dealerHand, playerScore, dealerScore, bet, count, player);

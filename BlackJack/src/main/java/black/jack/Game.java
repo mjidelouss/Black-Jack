@@ -17,6 +17,9 @@ public class Game {
         Player player = new Player();
         Scanner scanner = new Scanner(System.in);
         player.setBank(900);
+        player.setLoseCount(0);
+        player.setWinCount(0);
+        player.setTieCount(0);
         while (true) {
             gameMenu();
             System.out.print(Colors.RESET.getColor() +"\n\nEnter Your Choice : " + Colors.GREEN.getColor());
@@ -38,6 +41,7 @@ public class Game {
                         System.out.println(Arrays.deepToString(newdeck));
                         player.setBank((int) game[0]);
                     }
+                    playerStatistiques(player);
                     break;
                 case 2:
                     gameRules();
@@ -54,6 +58,9 @@ public class Game {
     public static Object[] compareScores(int[][] deck, int[][] dealerHand, int [][]playerHand, int dealerScore, int playerScore, int bet, int count, Player player) throws InterruptedException {
         Object[] result = new Object[2];
         int bank = player.getBank();
+        int winCount;
+        int loseCount;
+        int tieCount;
         while (dealerScore < 17) {
             int[][][] drawResult = draw_n_cards(deck, 1);
             int[][] newCard = drawResult[0];
@@ -73,19 +80,27 @@ public class Game {
             winMessage();
             bet = bet * 2;
             player.setBank(bank += bet);
+            winCount = player.getWinCount() + 1;
+            player.setWinCount(winCount);
             waitForEnter();
         } else {
             if (dealerScore == playerScore) {
                 tieMessage();
+                tieCount = player.getTieCount() + 1;
+                player.setTieCount(tieCount);
                 waitForEnter();
             } else if (dealerScore < playerScore && playerScore <= 21) {
                 winMessage();
                 bet = bet * 2;
                 player.setBank(bank += bet);
+                winCount = player.getWinCount() + 1;
+                player.setWinCount(winCount);
                 waitForEnter();
             } else {
                 loseMessage();
                 player.setBank(bank -= bet);
+                loseCount = player.getLoseCount() + 1;
+                player.setLoseCount(loseCount);
                 waitForEnter();
             }
         }
