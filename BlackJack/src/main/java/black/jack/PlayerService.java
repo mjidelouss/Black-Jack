@@ -39,21 +39,22 @@ public class PlayerService {
         }
         return score;
     }
-    public static Object[] playerHit(int[][] deck, int[][] dealerHand, int[][] playerHand, int dealerScore, int playerScore, int bet, int bank, int count) throws InterruptedException {
+    public static Object[] playerHit(int[][] deck, int[][] dealerHand, int[][] playerHand, int dealerScore, int playerScore, int bet, int count, Player player) throws InterruptedException {
         Object[] result = new Object[2];
+        int bank = player.getBank();
         if (playerScore > 21) {
             loseMessage();
-            bank -= bet;
+            player.setBank(bank -= bet);
             waitForEnter();
         } else {
-            hitOrStand(deck, playerHand, dealerHand, playerScore, dealerScore, bet, bank, count);
+            hitOrStand(deck, playerHand, dealerHand, playerScore, dealerScore, bet, count, player);
         }
-        result[0] = bank;
+        result[0] = player.getBank();
         result[1] = deck;
         return result;
     }
 
-    public static Object[] hitOrStand(int[][] deck, int[][] playerHand, int[][] dealerHand, int playerScore, int dealerScore, int bet, int bank, int count) throws InterruptedException {
+    public static Object[] hitOrStand(int[][] deck, int[][] playerHand, int[][] dealerHand, int playerScore, int dealerScore, int bet, int count, Player player) throws InterruptedException {
         Object[] result = new Object[2];
         playerOptions();
         count++;
@@ -69,10 +70,10 @@ public class PlayerService {
                 playerHand = discardCards(playerHand, newCard);
                 playerScore = showPlayerHand(playerHand);
                 dealerScore = showDealerHand(dealerHand, playerScore, show);
-                result = playerHit(deck, dealerHand, playerHand, dealerScore, playerScore, bet, bank, count);
+                result = playerHit(deck, dealerHand, playerHand, dealerScore, playerScore, bet, count, player);
                 break;
             case 2:
-                result = compareScores(deck, dealerHand, playerHand, dealerScore, playerScore, bet, bank, count);
+                result = compareScores(deck, dealerHand, playerHand, dealerScore, playerScore, bet, count, player);
                 break;
             default:
                 System.out.println(Colors.RED.getColor() + "\n\nInvalid choice. Please try again.");

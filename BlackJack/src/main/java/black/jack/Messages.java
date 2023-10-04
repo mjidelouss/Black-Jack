@@ -100,7 +100,7 @@ public class Messages {
     }
 
     public static void playerBank(int bank) throws InterruptedException {
-        System.out.print("\n\n\n");
+        System.out.print("\n");
         System.out.println('\t'+ Colors.RESET.getColor() +"\t                                            ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️");
         System.out.println('\t'+ Colors.RESET.getColor() +"\t                                            ◼️                                                                               ◼️");
         System.out.println('\t'+ Colors.RESET.getColor() +"\t                                            ◼️                                       🅑🅐🅝🅚                                   ◼️");
