@@ -1,2 +1,2 @@
 run:
-    "C:\Program Files\Java\jdk-11.0.16.1\bin\java.exe" "-javaagent:C:\Program Files\JetBrains\IntelliJ IDEA 2023.1.2\lib\idea_rt.jar=52000:C:\Program Files\JetBrains\IntelliJ IDEA 2023.1.2\bin" -Dfile.encoding=UTF-8 -classpath C:\Users\lordo\IdeaProjects\BlackJack\target\classes black.jack.Main
+    "C:\Program Files\Java\jdk-11.0.16.1\bin\java.exe" -Dfile.encoding=UTF-8 -classpath C:\Users\lordo\IdeaProjects\BlackJack\target\classes black.jack.Main

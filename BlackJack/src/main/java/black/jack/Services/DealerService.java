@@ -1,23 +1,23 @@
-package black.jack;
+package black.jack.Services;
+
+import black.jack.Enums.Colors;
 
 import static black.jack.Messages.showCards;
 import static black.jack.Messages.showCardsWithBack;
 
 public class DealerService {
 
-    public static int showDealerHand(int [][] cards, int playerScore, boolean show) {
+    public int showDealerHand(int [][] cards, int playerScore, boolean show) {
         int dealerScore = calculateDealerScore(cards);
-        System.out.println("Dealer Hand :");
+        System.out.println(Colors.RESET.getColor() +"Dealer Hand :");
         if (playerScore > 21 || (dealerScore >= 17 && show)) {
             showCards(cards);
         } else {
             showCardsWithBack(cards);
         }
-        System.out.print("\nDealer Score :\n");
-        System.out.println(dealerScore);
         return dealerScore;
     }
-    public static int calculateDealerScore(int[][] dealerHand) {
+    public int calculateDealerScore(int[][] dealerHand) {
         int score = 0;
         int numAces = 0;
         for (int[] card : dealerHand) {

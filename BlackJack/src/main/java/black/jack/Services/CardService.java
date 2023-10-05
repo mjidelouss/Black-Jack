@@ -1,13 +1,16 @@
-package black.jack;
+package black.jack.Services;
+
+import black.jack.Enums.Suit;
 
 import java.util.Random;
 
 public class CardService {
-    public static int[][] constructDeckFromCard(int cardNumber, int suit) {
-        int size = (13 - cardNumber + 1) + (4 - suit) * 13;
+    public static int suitLenght = Suit.values().length;
+    public int[][] constructDeckFromCard(int cardNumber, int suit) {
+        int size = (13 - cardNumber + 1) + (suitLenght - suit) * 13;
         int [][] newDeck = new int [size][2];
         int index = 0;
-        for (int i = suit; i <= 4 ; i++) {
+        for (int i = suit; i <= suitLenght ; i++) {
             for (int j = cardNumber; j <= 13; j++) {
                 newDeck[index][0] = j;
                 newDeck[index][1] = i;
@@ -18,7 +21,7 @@ public class CardService {
         return newDeck;
     }
 
-    public static int [][][] extractIndexCard(int [][] deck, int index) {
+    public int [][][] extractIndexCard(int [][] deck, int index) {
         int size = deck.length - 1;
         int[][] extractedCard = new int[1][2];
         int[][] remainingDeck = new int[size][2];
@@ -38,7 +41,7 @@ public class CardService {
         return result;
     }
 
-    public static int[][][] draw_n_cards(int[][] deck, int n) {
+    public int[][][] draw_n_cards(int[][] deck, int n) {
         int[][][] result = new int [2][][];
         int size = deck.length;
 
@@ -65,7 +68,7 @@ public class CardService {
         return result;
     }
 
-    public static int [][] discardCards(int [][] stack, int [][] discardedCards) {
+    public int [][] discardCards(int [][] stack, int [][] discardedCards) {
         int size = stack.length + discardedCards.length;
         int [][] deck = new int [size][2];
         int i;
@@ -82,13 +85,13 @@ public class CardService {
         return deck;
     }
 
-    public static int [][][] drawCard(int [][] deck) {
+    public int [][][] drawCard(int [][] deck) {
         int n = new Random().nextInt(deck.length / 2 + 1);
         int [][][] resList = extractIndexCard(deck, n);
         return resList;
     }
 
-    public static int[][] shuffleDeck(int [][] deck) {
+    public int[][] shuffleDeck(int [][] deck) {
         int [][] shuffledDeck = new int [deck.length][2];
         int [][][] cardList = drawCard(deck);
         int [][] newDeck = cardList[1];
@@ -105,7 +108,7 @@ public class CardService {
         return shuffledDeck;
     }
 
-    public static int [][] readyDeck() {
+    public int[][] readyDeck() {
         int [][] deck = constructDeckFromCard(1, 1);
         int [][] shuffledDeck = shuffleDeck(deck);
         int n = new Random().nextInt(3)+28;

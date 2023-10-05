@@ -22,67 +22,67 @@ public class Messages {
         };
         for (String line : lines) {
             System.out.println(line);
-            Thread.sleep(300);
+            Thread.sleep(220);
         }
     }
     public static void gameMenu() {
-        System.out.print("\n\n\n");
-        System.out.println('\t'+ Colors.RESET.getColor() +"\t                                            ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️");
-        System.out.println('\t'+ Colors.RESET.getColor() +"\t                                            ◼️                                                                                  ◼️");
-        System.out.println('\t'+ Colors.RESET.getColor() +"\t                                            ◼️                                  🅱🅻🅰🅲🅺 🅹🅰🅲🅺                                ◼️");
+        System.out.print("\n");
+        System.out.println('\t'+ Colors.RESET.getColor() +"\t                                            ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️  ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️");
+        System.out.println('\t'+ Colors.RESET.getColor() +"\t                                            ◼️                                                                                   ◼️");
+        System.out.println('\t'+ Colors.RESET.getColor() +"\t                                            ◼️                                  🅱🅻🅰🅲🅺 🅹🅰🅲🅺                                   ◼️");
         System.out.println('\t'+ Colors.RESET.getColor() +"\t                                            ◼️                                     ♣️ ♥️ ♠️ ♦️                                  ◼️");
-        System.out.println('\t'+ Colors.RESET.getColor() +"\t                                            ◼️                                                                                  ◼️");
-        System.out.println('\t'+ Colors.RESET.getColor() +"\t                                            ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️  ◼️ ◼️ ◼️ ◼️ ◼️ ◼️");
-        System.out.println('\t'+ Colors.RESET.getColor() +"\t                                            ◼️                                                                                  ◼️");
-        System.out.println('\t'+ Colors.RESET.getColor() +"\t                                            ◼️ (1) - Start Game.                                                                ◼️");
-        System.out.println('\t'+ Colors.RESET.getColor() +"\t                                            ◼️ (2) - Rules.                                                                     ◼️");
-        System.out.println('\t'+ Colors.RESET.getColor() +"\t                                            ◼️ (3) - Quit.                                                                      ◼️");
-        System.out.println('\t'+ Colors.RESET.getColor() +"\t                                            ◼️                                                                                  ◼️");
-        System.out.println('\t'+ Colors.RESET.getColor() +"\t                                            ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️");
+        System.out.println('\t'+ Colors.RESET.getColor() +"\t                                            ◼️                                                                                   ◼️");
+        System.out.println('\t'+ Colors.RESET.getColor() +"\t                                            ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️  ◼️ ◼️ ◼️ ◼️ ◼️ ️ ◼️ ◼️  ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️️");
+        System.out.println('\t'+ Colors.RESET.getColor() +"\t                                            ◼️                                                                                   ◼️");
+        System.out.println('\t'+ Colors.RESET.getColor() +"\t                                            ◼️ (1) - Start Game.                                                                 ◼️");
+        System.out.println('\t'+ Colors.RESET.getColor() +"\t                                            ◼️ (2) - Rules.                                                                      ◼️");
+        System.out.println('\t'+ Colors.RESET.getColor() +"\t                                            ◼️ (3) - Quit.                                                                       ◼️");
+        System.out.println('\t'+ Colors.RESET.getColor() +"\t                                            ◼️                                                                                   ◼️");
+        System.out.println('\t'+ Colors.RESET.getColor() +"\t                                            ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️");
     }
     public static void playerOptions() {
-        System.out.print("\n\n\n");
-        System.out.println('\t'+ Colors.RESET.getColor() +"\t                                            ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️");
-        System.out.println('\t'+ Colors.RESET.getColor() +"\t                                            ◼️                                                                                  ◼️");
-        System.out.println('\t'+ Colors.RESET.getColor() +"\t                                            ◼️                                  🅱🅻🅰🅲🅺 🅹🅰🅲🅺                                ◼️");
-        System.out.println('\t'+ Colors.RESET.getColor() +"\t                                            ◼️                                     ♣️ ♥️ ♠️ ♦️                                  ◼️");
-        System.out.println('\t'+ Colors.RESET.getColor() +"\t                                            ◼️                                                                                  ◼️");
-        System.out.println('\t'+ Colors.RESET.getColor() +"\t                                            ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️  ◼️ ◼️ ◼️ ◼️ ◼️ ◼️");
-        System.out.println('\t'+ Colors.RESET.getColor() +"\t                                            ◼️                                                                                  ◼️");
-        System.out.println('\t'+ Colors.RESET.getColor() +"\t                                            ◼️ (1) - Hit.                                                                       ◼️");
-        System.out.println('\t'+ Colors.RESET.getColor() +"\t                                            ◼️ (2) - Stand.                                                                     ◼️");
-        System.out.println('\t'+ Colors.RESET.getColor() +"\t                                            ◼️                                                                                  ◼️");
-        System.out.println('\t'+ Colors.RESET.getColor() +"\t                                            ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️");
+        System.out.print("\n");
+        System.out.println('\t'+ Colors.RESET.getColor() +"\t                                            ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️️");
+        System.out.println('\t'+ Colors.RESET.getColor() +"\t                                            ◼️                                                                                                  ◼️");
+        System.out.println('\t'+ Colors.RESET.getColor() +"\t                                            ◼️                                  🅱🅻🅰🅲🅺 🅹🅰🅲🅺                                                  ◼️");
+        System.out.println('\t'+ Colors.RESET.getColor() +"\t                                            ◼️                                     ♣️ ♥️ ♠️ ♦️                                                 ◼️");
+        System.out.println('\t'+ Colors.RESET.getColor() +"\t                                            ◼️                                                                                                 ◼️");
+        System.out.println('\t'+ Colors.RESET.getColor() +"\t                                            ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️  ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️");
+        System.out.println('\t'+ Colors.RESET.getColor() +"\t                                            ◼️                                                                                                  ◼️");
+        System.out.println('\t'+ Colors.RESET.getColor() +"\t                                            ◼️ (1) - Hit.                                                                                       ◼️");
+        System.out.println('\t'+ Colors.RESET.getColor() +"\t                                            ◼️ (2) - Stand.                                                                                     ◼️");
+        System.out.println('\t'+ Colors.RESET.getColor() +"\t                                            ◼️                                                                                                  ◼️");
+        System.out.println('\t'+ Colors.RESET.getColor() +"\t                                            ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️");
     }
 
     public static void gameRules() {
-        System.out.print("\n\n\n");
-        System.out.println('\t'+ Colors.RESET.getColor() +"\t                                            ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️");
-        System.out.println('\t'+ Colors.RESET.getColor() +"\t                                            ◼️                                                                                                       ◼️");
-        System.out.println('\t'+ Colors.RESET.getColor() +"\t                                            ◼️                                                🅡🅤🅛🅔🅢                                               ◼️");
-        System.out.println('\t'+ Colors.RESET.getColor() +"\t                                            ◼️                                               ♣️ ♥️ ♠️ ♦️                                             ◼️");
-        System.out.println('\t'+ Colors.RESET.getColor() +"\t                                            ◼️                                                                                                       ◼️");
-        System.out.println('\t'+ Colors.RESET.getColor() +"\t                                            ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️  ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️");
-        System.out.println('\t'+ Colors.RESET.getColor() +"\t                                            ◼️                                                                                                       ◼️");
-        System.out.println('\t'+ Colors.RESET.getColor() +"\t                                            ◼️ - Aim for 21: Get as close to 21 as possible without going over.                                      ◼️");
-        System.out.println('\t'+ Colors.RESET.getColor() +"\t                                            ◼️ - Card Values: Numbered cards are face value, face cards are worth 10, and Aces can be 1 or 11.       ◼️");
-        System.out.println('\t'+ Colors.RESET.getColor() +"\t                                            ◼️ - Player's Turn: Choose to -Hit- for another card or -Stand- to keep your current hand.               ◼️");
-        System.out.println('\t'+ Colors.RESET.getColor() +"\t                                            ◼️ - Dealer's Turn: The dealer draws cards until they reach a total of 17 or higher.                     ◼️");
-        System.out.println('\t'+ Colors.RESET.getColor() +"\t                                            ◼️ - Win Conditions: If your hand is closer to 21 than the dealer's, you win. Don't go over 21 (bust)!   ◼️");
-        System.out.println('\t'+ Colors.RESET.getColor() +"\t                                            ◼️ - Blackjack: An Ace and a 10-value card give you an automatic win.                                    ◼️");
-        System.out.println('\t'+ Colors.RESET.getColor() +"\t                                            ◼️ - Options: You can -Double Down- to double your bet or -Split- pairs into separate hands.             ◼️");
-        System.out.println('\t'+ Colors.RESET.getColor() +"\t                                            ◼️ - Insurance: If the dealer's visible card is an Ace, you can take insurance to protect your bet.      ◼️");
-        System.out.println('\t'+ Colors.RESET.getColor() +"\t                                            ◼️ - Push: If your hand value matches the dealer's, it's a tie (push), and your bet is returned.         ◼️");
-        System.out.println('\t'+ Colors.RESET.getColor() +"\t                                            ◼️ - Enjoy the Game: Have fun playing blackjack and try to beat the dealer!                              ◼️");
-        System.out.println('\t'+ Colors.RESET.getColor() +"\t                                            ◼️                                                                                                       ◼️");
-        System.out.println('\t'+ Colors.RESET.getColor() +"\t                                            ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️");
+        System.out.print("\n");
+        System.out.println('\t'+ Colors.RESET.getColor() +"\t                                       ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️");
+        System.out.println('\t'+ Colors.RESET.getColor() +"\t                                       ◼️                                                                                                       ◼️");
+        System.out.println('\t'+ Colors.RESET.getColor() +"\t                                       ◼️                                                🅡🅤🅛🅔🅢                                                ◼️");
+        System.out.println('\t'+ Colors.RESET.getColor() +"\t                                       ◼️                                               ♣️ ♥️ ♠️ ♦️                                             ◼️");
+        System.out.println('\t'+ Colors.RESET.getColor() +"\t                                       ◼️                                                                                                       ◼️");
+        System.out.println('\t'+ Colors.RESET.getColor() +"\t                                       ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️  ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️◼️ ◼️ ◼️ ◼️ ◼️ ◼️◼️ ◼️ ◼️ ◼️ ◼️ ️");
+        System.out.println('\t'+ Colors.RESET.getColor() +"\t                                       ◼️                                                                                                       ◼️");
+        System.out.println('\t'+ Colors.RESET.getColor() +"\t                                       ◼️ - Aim for 21: Get as close to 21 as possible without going over.                                      ◼️");
+        System.out.println('\t'+ Colors.RESET.getColor() +"\t                                       ◼️ - Card Values: Numbered cards are face value, face cards are worth 10, and Aces can be 1 or 11.       ◼️");
+        System.out.println('\t'+ Colors.RESET.getColor() +"\t                                       ◼️ - Player's Turn: Choose to -Hit- for another card or -Stand- to keep your current hand.               ◼️");
+        System.out.println('\t'+ Colors.RESET.getColor() +"\t                                       ◼️ - Dealer's Turn: The dealer draws cards until they reach a total of 17 or higher.                     ◼️");
+        System.out.println('\t'+ Colors.RESET.getColor() +"\t                                       ◼️ - Win Conditions: If your hand is closer to 21 than the dealer's, you win. Don't go over 21 (bust)!   ◼️");
+        System.out.println('\t'+ Colors.RESET.getColor() +"\t                                       ◼️ - Blackjack: An Ace and a 10-value card give you an automatic win.                                    ◼️");
+        System.out.println('\t'+ Colors.RESET.getColor() +"\t                                       ◼️ - Options: You can -Double Down- to double your bet or -Split- pairs into separate hands.             ◼️");
+        System.out.println('\t'+ Colors.RESET.getColor() +"\t                                       ◼️ - Insurance: If the dealer's visible card is an Ace, you can take insurance to protect your bet.      ◼️");
+        System.out.println('\t'+ Colors.RESET.getColor() +"\t                                       ◼️ - Push: If your hand value matches the dealer's, it's a tie (push), and your bet is returned.         ◼️");
+        System.out.println('\t'+ Colors.RESET.getColor() +"\t                                       ◼️ - Enjoy the Game: Have fun playing blackjack and try to beat the dealer!                              ◼️");
+        System.out.println('\t'+ Colors.RESET.getColor() +"\t                                       ◼️                                                                                                       ◼️");
+        System.out.println('\t'+ Colors.RESET.getColor() +"\t                                       ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ");
         System.out.println(Colors.RESET.getColor() + "\nPress Enter to continue...\n");
         Scanner scanner = new Scanner(System.in);
         scanner.nextLine();
     }
 
     public static void betMoney() throws InterruptedException {
-        System.out.print("\n\n\n");
+        System.out.print("\n");
         System.out.println('\t'+ Colors.RESET.getColor() +"\t                                            ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️");
         System.out.println('\t'+ Colors.RESET.getColor() +"\t                                            ◼️                                                                               ◼️");
         System.out.println('\t'+ Colors.RESET.getColor() +"\t                                            ◼️                                        🅱🅴🆃                                   ◼️");
@@ -129,13 +129,13 @@ public class Messages {
 
     public static void quitApp() throws InterruptedException {
         String[] lines = {
-                "\n\n\n\n\n\n",
-                '\t'+ Colors.GREEN.getColor() +"                                                                 ██████╗  ██████╗  ██████╗ ██████╗ ██████╗ ██╗   ██╗███████╗    ██╗",
-                '\t'+ Colors.GREEN.getColor() +"                                                                ██╔════╝ ██╔═══██╗██╔═══██╗██╔══██╗██╔══██╗╚██╗ ██╔╝██╔════╝    ██║",
-                '\t'+ Colors.GREEN.getColor() +"                                                                ██║  ███╗██║   ██║██║   ██║██║  ██║██████╔╝ ╚████╔╝ █████╗      ██║",
-                '\t'+ Colors.GREEN.getColor() +"                                                                ██║   ██║██║   ██║██║   ██║██║  ██║██╔══██╗  ╚██╔╝  ██╔══╝      ╚═╝",
-                '\t'+ Colors.GREEN.getColor() +"                                                                ╚██████╔╝╚██████╔╝╚██████╔╝██████╔╝██████╔╝   ██║   ███████╗    ██╗",
-                '\t'+ Colors.GREEN.getColor() +"                                                                 ╚═════╝  ╚═════╝  ╚═════╝ ╚═════╝ ╚═════╝    ╚═╝   ╚══════╝    ╚═╝",
+                "\n\n",
+                    '\t'+ Colors.BLUE.getColor() +"                                                         ██████╗  ██████╗  ██████╗ ██████╗ ██████╗ ██╗   ██╗███████╗    ██╗",
+                '\t'+ Colors.BLUE.getColor() +"                                                        ██╔════╝ ██╔═══██╗██╔═══██╗██╔══██╗██╔══██╗╚██╗ ██╔╝██╔════╝    ██║",
+                '\t'+ Colors.BLUE.getColor() +"                                                        ██║  ███╗██║   ██║██║   ██║██║  ██║██████╔╝ ╚████╔╝ █████╗      ██║",
+                '\t'+ Colors.BLUE.getColor() +"                                                        ██║   ██║██║   ██║██║   ██║██║  ██║██╔══██╗  ╚██╔╝  ██╔══╝      ╚═╝",
+                '\t'+ Colors.BLUE.getColor() +"                                                        ╚██████╔╝╚██████╔╝╚██████╔╝██████╔╝██████╔╝   ██║   ███████╗    ██╗",
+                '\t'+ Colors.BLUE.getColor() +"                                                         ╚═════╝  ╚═════╝  ╚═════╝ ╚═════╝ ╚═════╝    ╚═╝   ╚══════╝    ╚═╝",
         };
         for (String line : lines) {
             System.out.println(line);
@@ -145,7 +145,7 @@ public class Messages {
     }
 
     public static void winMessage() throws InterruptedException {
-        System.out.print("\n\n");
+        System.out.print("\n");
         String lines[] = {
                 '\t'+ Colors.YELLOW.getColor() +"⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣴⣿⣿⣿⣿⣿⣿⣿⣷⡀⣀⣤⣤⣤⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n"+
                         '\t'+ Colors.YELLOW.getColor() +"⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣼⣿⣿⣿⡟⢿⣻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⣄⢀⣀⣤⣴⣦⣤⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n"+
@@ -153,8 +153,6 @@ public class Messages {
                         '\t'+ Colors.YELLOW.getColor() +"⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣿⣿⣿⣿⣙⢦⣇⠻⡴⣛⣿⡵⢎⡼⣱⡚⣼⢻⣿⣿⡟⡽⣛⠿⣿⣿⣿⣷⣤⣤⣄⣀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n"+
                         '\t'+ Colors.YELLOW.getColor() +"⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣼⣿⣿⣿⡳⣜⢺⡬⢏⡵⢣⡝⣹⢎⡵⢣⡝⢦⡛⡼⣻⣿⡵⣩⢞⡹⢿⣿⣿⣿⣿⣿⣿⣿⣆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n"+
                         '\t'+ Colors.YELLOW.getColor() +"⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠹⣿⣿⣿⣿⡜⣣⢳⢎⡳⣬⢓⡳⢎⡻⣜⡲⡹⡥⢏⡞⣥⠻⣔⡛⢦⡻⣌⢏⡞⡼⣿⣿⣿⣧⣀⣀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n"+
-                        '\t'+ Colors.YELLOW.getColor() +"⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⣿⣿⣿⣿⣥⣋⢮⠵⣊⢧⡛⡼⡱⢎⡵⢳⢭⡓⡞⣥⢻⡜⣹⢣⠗⣮⢹⡜⣱⢿⣿⣿⣿⣿⣿⣿⣷⣦⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n"+
-                        '\t'+ Colors.YELLOW.getColor() +"⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⢿⣿⣿⣷⣎⢧⢫⡝⢶⣹⡱⢏⡽⢪⣝⡲⢽⡱⣋⢶⡩⢇⣏⠾⣡⣛⢼⣣⢞⡻⢿⡻⣟⢿⣿⣿⣿⣷⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n"+
                         '\t'+ Colors.YELLOW.getColor() +"⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⢿⣿⣿⣿⣮⡓⢮⣓⢦⠽⣩⢞⣣⠮⡕⣧⢳⣭⣶⣿⣿⣾⣧⣷⣬⠳⡭⢎⡵⣋⠶⣍⠮⣽⣿⣿⣿⡷⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n"+
                         '\t'+ Colors.YELLOW.getColor() +"⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⢻⣿⣿⣿⣯⣷⣾⣮⣳⣧⣞⣦⣿⣽⣾⠿⠛⠋⠉⠀⠀⠉⠙⣿⣟⡼⣩⠞⣭⢓⡮⣽⣾⣿⣿⣿⣃⣀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n"+
                         '\t'+ Colors.YELLOW.getColor() +"⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢹⣿⣿⣿⣿⣿⣿⣿⡿⠿⠟⠛⠃⠀⠀⠀⠀⣀⣀⣤⣤⡀⠈⣿⣧⢇⢾⡠⣞⣿⣿⣿⣿⣿⣿⣿⣿⣿⣧⡀⠀⠀⠀⠀⠀⠀⠀⠀\n"+
@@ -165,19 +163,15 @@ public class Messages {
                         '\t'+ Colors.YELLOW.getColor() +"⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⣾⣿⣿⡿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⣿⣶⣿⣿⣏⣀⣴⣿⣿⣿⣿⠟⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀\n"+
                         '\t'+ Colors.YELLOW.getColor() +"⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣾⣿⣿⡟⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣴⡿⣏⢧⢫⢟⡻⢏⡽⣿⣿⣿⣧⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n"+
                         '\t'+ Colors.YELLOW.getColor() +"⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣾⣿⣿⡟⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣰⣿⢏⡗⣺⢬⡓⣮⠳⣭⢲⢻⣿⣿⣿⣧⠀⠀⠀⠀⠀⠀⠀⠀⠀\n"+
-                        '\t'+ Colors.YELLOW.getColor() +"⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⣿⣿⣿⡟⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⡟⡮⡼⡱⣎⠵⣎⢽⠲⣍⢯⣿⣿⣿⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀\n"+
-                        '\t'+ Colors.YELLOW.getColor() +"⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⣿⣿⣿⡟⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⣿⡟⣜⡳⢵⢪⠽⣘⠮⣝⡜⣾⣿⣿⣿⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀\n"+
                         '\t'+ Colors.YELLOW.getColor() +"⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⣿⣿⣿⡟⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣿⢵⣊⣿⢥⡫⡝⣥⣛⣾⣿⣿⣿⣿⣿⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀\n"+
                         '\t'+ Colors.YELLOW.getColor() +"⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⣿⣿⣿⠟⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣼⣟⢦⣋⡟⡶⣱⢋⡶⣹⣿⣿⣿⣿⠿⠋⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n"+
                         '\t'+ Colors.YELLOW.getColor() +"⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⣿⣿⣿⠏⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⢿⣷⣭⡚⡵⢣⢏⡖⣿⣿⣿⣿⣇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n"+
                         '\t'+ Colors.YELLOW.getColor() +"⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣾⣿⣿⡟⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠹⣷⣿⡼⣭⣾⣾⡿⢻⣿⣿⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n"+
                         '\t'+ Colors.YELLOW.getColor() +"⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢰⣿⣿⣿⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠛⠿⠛⠉⠁⠀⢸⣿⣿⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n"+
                         '\t'+ Colors.YELLOW.getColor() +"⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣰⣿⣿⣿⠀⢀⣴⣿⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⣿⣿⣿⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n"+
-                        '\t'+ Colors.YELLOW.getColor() +"⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢰⣿⣿⣿⣿⣶⣿⣿⣿⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⣿⣿⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n"+
                         '\t'+ Colors.YELLOW.getColor() +"⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠈⢻⣿⣿⣿⣿⣿⣿⡇⠀⠀⠀⢀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢻⣿⣿⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n"+
                         '\t'+ Colors.YELLOW.getColor() +"⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠀⢸⣿⣿⣿⠀⠀⣠⣾⣷⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣿⣿⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n"+
                         '\t'+ Colors.YELLOW.getColor() +"⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⣦⠀⠈⣿⣿⣿⣠⣾⣿⣿⣿⣿⣦⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣿⣿⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n"+
-                        '\t'+ Colors.YELLOW.getColor() +"⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⣿⡇⠀⢿⣿⣿⣿⣿⡿⠛⢿⣿⣿⣷⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣾⣿⣿⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n"+
                         '\t'+ Colors.YELLOW.getColor() +"⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣿⣷⠀⠀⠉⠙⠋⠉⠀⠀⠈⠻⣿⣿⣿⣦⣀⠀⠀⠀⠀⠀⠀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⣿⣿⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n"+
                         '\t'+ Colors.YELLOW.getColor() +"⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣿⣿⡆⠀⠀⠀⠀⠀⠀⠀⢀⠀⠈⠟⠛⠛⠉⣰⣇⠀⠀⠀⣾⣿⡀⠀⢠⣦⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡈⠛⠛⠛⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n"+
                         '\t'+ Colors.YELLOW.getColor() +"⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⣿⣷⠀⠀⠀⠀⠀⠀⢀⣿⣿⠀⢰⣶⡄⠀⣿⣿⣆⠀⠀⢽⣿⡇⠀⣿⣿⣿⡀⠀⣸⣿⡄⠀⢀⣴⣶⣶⣶⣶⣷⣄⣠⣾⣷⣶⣶⣦⣤⡀⠀⠀⠀⠀⠀⠀\n"+
@@ -208,7 +202,7 @@ public class Messages {
 
     }
     public static void loseMessage() throws InterruptedException {
-        System.out.print("\n\n");
+        System.out.print("\n");
         String lines[] = {
                 '\t'+"\t\t  "+ Colors.CYAN.getColor() +"                              ████████╗ ██████╗ ██╗   ██╗ ██████╗ ██╗  ██╗    ██╗     ██╗   ██╗ ██████╗██╗  ██╗██╗\n" +
                         '\t'+"\t\t    "+ Colors.CYAN.getColor() +"                            ╚══██╔══╝██╔═══██╗██║   ██║██╔════╝ ██║  ██║    ██║     ██║   ██║██╔════╝██║ ██╔╝██║\n" +
@@ -343,47 +337,44 @@ public class Messages {
 
                 switch (cardSuit) {
                     case 1:
-                        cardSuitStr = "♥️"; // Hearts
+                        cardSuitStr = "♥️";
                         break;
                     case 2:
-                        cardSuitStr = "♦️"; // Diamonds
+                        cardSuitStr = "♦️";
                         break;
                     case 3:
-                        cardSuitStr = "♠️"; // Spades
+                        cardSuitStr = "♠️";
                         break;
                     case 4:
-                        cardSuitStr = "♣️"; // Clubs
+                        cardSuitStr = "♣️";
                         break;
                     default:
-                        cardSuitStr = "?"; // Unknown suit
+                        cardSuitStr = "?";
                         break;
                 }
-
                 if (row == 0) {
-                    System.out.print(" _______  ");
+                    System.out.print(Colors.RESET.getColor() +"┌─────────┐");
                 } else if (row == 1) {
                     String padding = " ".repeat(maxLength - cardValueStr.length());
-                    System.out.print("|       | ");
+                    System.out.print("|" + cardValueStr +"        |");
                 } else if (row == 2) {
                     String padding = " ".repeat(maxLength - cardValueStr.length());
-                    System.out.print("|   " + cardValueStr + "   | ");
+                    System.out.print("|    " + cardSuitStr + "   |");
                 } else if (row == 3) {
-                    System.out.print("|   " + cardSuitStr + "  | ");
+                    System.out.print("|        "+ cardValueStr +"|");
                 } else if (row == 4) {
-                    System.out.print("|_______| ");
+                    System.out.print("└─────────┘");
                 }
             }
             System.out.println();
         }
     }
+
     public static void showCardsWithBack(int[][] cards) {
-        // Check if there are no cards
         if (cards.length == 0) {
             System.out.println("No cards to display.");
             return;
         }
-
-        // Determine the maximum length of card value strings
         int maxLength = 0;
         for (int[] card : cards) {
             int cardValue = card[0];
@@ -436,52 +427,52 @@ public class Messages {
 
                 switch (cardSuit) {
                     case 1:
-                        cardSuitStr = "♥️"; // Hearts
+                        cardSuitStr = "♥️";
                         break;
                     case 2:
-                        cardSuitStr = "♦️"; // Diamonds
+                        cardSuitStr = "♦️";
                         break;
                     case 3:
-                        cardSuitStr = "♠️"; // Spades
+                        cardSuitStr = "♠️";
                         break;
                     case 4:
-                        cardSuitStr = "♣️"; // Clubs
+                        cardSuitStr = "♣️";
                         break;
                     default:
-                        cardSuitStr = "?"; // Unknown suit
+                        cardSuitStr = "?";
                         break;
                 }
 
                 if (row == 0) {
                     if (i == 0) {
-                        System.out.print(" _______  "); // Show the back of the first card
+                        System.out.print(Colors.RESET.getColor() +"┌─────────┐");
                     } else {
-                        System.out.print(" _______  "); // Show the face of other cards
+                        System.out.print(Colors.RESET.getColor() +"┌─────────┐");
                     }
                 } else if (row == 1) {
                     if (i == 0) {
-                        System.out.print("|///////| "); // Show the back of the first card
+                        System.out.print("|?        |");
                     } else {
-                        System.out.print("|       | "); // Show the face of other cards
+                        System.out.print("|" + cardValueStr +"        |");
                     }
                 } else if (row == 2) {
                     if (i == 0) {
-                        System.out.print("|///////| "); // Show the back of the first card
+                        System.out.print("|    ?    |");
                     } else {
                         String padding = " ".repeat(maxLength - cardValueStr.length());
-                        System.out.print("|   " + cardValueStr + padding + "   | "); // Show the face of other cards
+                        System.out.print("|    " + cardSuitStr + "   |");
                     }
                 } else if (row == 3) {
                     if (i == 0) {
-                        System.out.print("|///////| "); // Show the back of the first card
+                        System.out.print("|        ?|");
                     } else {
-                        System.out.print("|   " + cardSuitStr + "  | "); // Show the face of other cards
+                        System.out.print("|        "+ cardValueStr +"|");
                     }
                 } else if (row == 4) {
                     if (i == 0) {
-                        System.out.print("|_______| "); // Show the back of the first card
+                        System.out.print("└─────────┘");
                     } else {
-                        System.out.print("|_______| "); // Show the face of other cards
+                        System.out.print("└─────────┘");
                     }
                 }
             }
